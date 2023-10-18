@@ -1,0 +1,60 @@
+.size{
+  padding: 10px 10%;
+  background-color: #f4f2f2;
+}
+.box{
+  background-color: #fff;
+  margin: 25px 0px;
+}
+.titlePage{
+  font-size: 32px;
+  font-weight: 600;
+  padding: 20px;
+}
+
+.nav{
+  margin-left: 25px;
+  margin-bottom: 25px;
+  width: 280px;
+}
+.nav li{
+  padding: 5px 0px;
+}
+.nav li a{
+  transition: all 0.3s;
+}
+.nav li:hover{
+  cursor: pointer;
+  transition: all 0.3s;
+  color:#fdb819;  
+}
+.nav li:hover a{
+  transition: all 0.3s;
+  color:#fdb819;  
+}
+.content{
+  display: flex;
+}
+@media (max-width: 1150px){
+  .size{
+   padding: 10px 5%;
+  }
+}
+@media (max-width: 1020px){
+  .size{
+    padding: 10px 20px;
+  }
+}
+@media (max-width: 865px){
+  .size{
+    padding: 10px 0px;
+  }
+}
+@media (max-width: 480px){
+  .content{
+    flex-wrap: wrap;
+  }
+  .nav{
+    margin: 10px 50px;
+  }
+}

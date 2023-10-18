@@ -1,0 +1,22 @@
+.name{
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #919191;
+}
+.item{
+  margin: 3px 0px;
+}
+.item .a{
+  display: flex;
+  white-space: nowrap;
+  color: #919191;
+  padding: 8px 0px;
+  transition: all 0.3s;
+}
+.item .a:hover{
+  transition: all 0.3s;
+  color: #fdb819;
+}

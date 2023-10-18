@@ -1,0 +1,90 @@
+.size{
+  padding: 10px 10%;
+  background-color: #f4f2f2;
+}
+.delButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 40px;
+  background-color: black;
+  color: #fff;
+  transition: all 0.5s;
+}
+.delButton:hover{
+  transition: all 0.5s;
+  background-color: #ffba31;
+  color: #000;
+}
+.box{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding:0px 25px;
+}
+.boxHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.namePages{
+  font-weight: 600;
+  font-size: 32px;
+  padding: 25px 25px;
+}
+thead{
+  background-color: #e1e1e1;
+}
+table{
+  border-collapse: collapse;
+  color: #626262;
+}
+
+
+.totals{
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  min-width: 350px;
+}
+.chekout{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 220px;
+  background-color: #000;
+  color: #fff;
+  transition: all 0.5s;
+  margin: 25px 0px;
+}
+.chekout:hover{
+  transition: all 0.5s;
+  background-color: #ffba31;
+  color: #000;
+}
+.totalsName{
+  font-weight: 600;
+  padding: 25px 0px;
+}
+.totalPrice{
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 1150px){
+  .size{
+   padding: 10px 5%;
+  }
+}
+@media (max-width: 1020px){
+  .size{
+    padding: 10px 20px;
+  }
+}
+@media (max-width: 865px){
+  .size{
+    padding: 10px 0px;
+  }
+}

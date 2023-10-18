@@ -1,0 +1,78 @@
+.box{
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 25px;
+  margin: 25px 0px;
+}
+.images{
+  width: 50%;
+}
+.info{
+  padding: 25px;
+  width: 50%;
+}
+.name{
+  font-weight: 600;
+  font-size: 32px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+.description{
+  font-size: 18px;
+  color: #dddddd;
+  margin-bottom: 25px;
+}
+.price{
+  font-weight: 600;
+  font-size: 20px;
+  color: #000;
+  margin-bottom: 25px;
+}
+.navigate{
+  display: flex;
+  justify-content: space-between;
+}
+.count{
+  background-color: #dddddd;
+  padding: 12px;
+  margin-bottom: 25px;
+}
+.count span{
+  cursor: pointer;
+  padding: 12px;
+}
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  margin-left: 12px;
+  margin-bottom: 25px;
+}
+@media (max-width: 865px){
+  .box{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .images{
+    display: flex;
+    min-width: 100%;
+  }
+  .navigate{
+    display: flex;
+    flex-direction: column;
+  }
+  .navigate .count{
+    max-width: 98px;
+    min-width: 90px;
+  }
+  .button{
+    padding: 8px;
+    margin-left: 0px;
+    min-width: 100px;
+  }
+}

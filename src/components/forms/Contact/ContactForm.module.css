@@ -1,0 +1,51 @@
+.form{
+  display: flex;
+  flex-direction: column;
+  color: #626262;
+  padding: 20px;
+}
+.nameForm{
+  font-size: 23px;
+  color: #000;
+  font-family: "Rubik",Sans-serif;
+  font-weight: 600;
+  padding-bottom: 15px;
+}
+.dateUser{
+  display: flex;
+  justify-content: space-between;
+}
+.input{
+  display: flex;
+  width: 48%;
+  flex-direction: column;
+}
+
+input, textarea{
+  margin: 15px 0px;
+  padding: 8px 0px;
+  width: 100%;
+  outline: none;
+}
+textarea{
+  height: 100px;
+}
+
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffc131;
+  color: #000;
+  max-width: 80px;
+  padding: 8px;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+.button:hover{
+  cursor: pointer;
+  color: #fff;
+  background-color: #000;
+  transition: all 0.3s;
+
+}

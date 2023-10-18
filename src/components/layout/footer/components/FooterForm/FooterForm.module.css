@@ -1,0 +1,48 @@
+.box{
+  width: 400px;
+}
+.name{
+  padding: 10px 0px;
+  color: #fff;
+  font-weight: 600;
+}
+.description{
+  text-align: justify;
+  padding: 10px 0px;
+}
+.button{
+  width: 20%;
+  padding: 8px 8px;
+  background-color: #fdb819;
+  color: #fff;
+}
+.input{
+  display: flex;
+  align-items: center;
+  margin: 10px 0px;
+  min-width: 100%;
+}
+.input input{
+  padding: 8.5px 25px;
+  min-width: 79%;
+  border: 1px solid #9a9a9a;
+  background-color: #212121;
+  color: #fff;
+}
+.input input:focus-visible{
+  outline: none;
+}
+
+@media (max-width: 1150px){
+  .box{
+    width: 350px;
+  }
+}
+@media (max-width: 1020px){
+  .box{
+    width: 300px;
+  }
+  .input input{
+    min-width: 60%;
+  }
+}

@@ -1,0 +1,51 @@
+.name_category_main{
+  display: flex;  
+  align-items: center;
+  width: 100%;
+  margin-right: 20px;
+  background-color: #000;
+  color: #fff;
+  padding: 15px 0px;
+}
+
+.icon_burg{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 15px;
+  height: 18px;
+  padding-left: 15px;
+  margin-right: 20px;
+}
+.icon_burg .line{
+  display: block;
+  content: '';
+  width: 28px;
+  height: 2px;
+  background-color: #ffffff;
+}
+.icon_burg::after{
+  display: block;
+  content: '';
+  width: 28px;
+  height: 2px;
+  background-color: #ffffff;
+}
+.icon_burg::before{
+  display: block;
+  content: '';
+  width: 28px;
+  height: 2px;
+  background-color: #ffffff;
+}
+@media (max-width: 865px){
+  .name_category_main{
+    display: flex;  
+    padding-left: 2%;
+    align-items: center;
+    width: 98%;
+    margin-right: 0px;
+    background-color: #000;
+    color: #fff;
+  }
+}

@@ -1,0 +1,25 @@
+.list{
+  display: flex;
+  flex-direction: column;
+  margin: 0px 25px 25px 25px;
+  width: 100%;
+}
+.order>tr{
+  display: flex;
+  justify-content: space-around;
+}
+.order>tr>th{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 10px 0px;
+}
+
+.status{
+  border-radius: 3px;
+  background-color: #ffb22d;
+}
+.statusOk{
+  border-radius: 3px;
+  background-color: #05cc2a;
+}

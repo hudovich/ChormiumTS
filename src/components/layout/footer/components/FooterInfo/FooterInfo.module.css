@@ -1,0 +1,54 @@
+.box{
+  display: flex;
+  flex-direction: column;
+  max-width: 360px;
+}
+.logo{
+  max-width: 250px;
+  margin: 10px 0px;
+}
+.logo img{
+  width: 100%;
+}
+.addres, .phone, .email{
+  display: flex;
+  margin: 10px 0px;
+}
+.item{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 300px; 
+}
+.icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+}
+.phone .item{
+  display: flex;
+  flex-direction: column;
+}
+.phone .item a{
+  color: #fff;
+}
+.addres .item{
+  color: #fff;
+}
+.email .item{
+  color: #fff;
+}
+@media (max-width: 865px){
+  .box{
+    min-width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .logo{
+    margin: 10px auto;
+  }
+  .boxMobile{
+    display: flex;
+    flex-direction: column;
+  }
+}

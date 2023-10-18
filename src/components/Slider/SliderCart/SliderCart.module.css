@@ -1,0 +1,37 @@
+.box{
+  display: flex;
+  overflow: hidden;
+  max-width: 97%;
+}
+.slide{
+  margin: 30px;
+  min-width: 26%;
+}
+@media (max-width:1300px){
+  .slide{
+    min-width: 25%;
+  }
+}
+@media (max-width:950px){
+  .slide{
+    min-width: 24%;
+    margin-right: 35px;
+  }
+}
+@media (max-width:864px){
+  .slide{
+    min-width: 26%;
+  }
+}
+@media (max-width:750px){
+  .slide{
+    min-width: 40%;
+  }
+}
+@media (max-width:465px){
+  .slide{
+    margin-right: 0px;
+    min-width: 100%;
+    margin: 0px;
+  }
+}

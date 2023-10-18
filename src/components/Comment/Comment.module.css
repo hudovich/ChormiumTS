@@ -1,0 +1,64 @@
+.reviewsBoxName{
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 600;
+}
+.postReviews{
+  display: flex;
+  padding: 20px 0px;
+  margin: 20px 0px;
+  border-bottom: 1px solid #d4d3d3;
+}
+.photo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right:25px;
+  background-color: aqua;
+  width: 80px;
+  height: 80px;
+}
+.photo img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  max-width: 100px;
+  max-height: 100px;
+}
+.item{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.author{
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  padding: 8px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  background-color: #fdb819;
+  color: #000;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+.button:hover{
+  background-color: #000;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+@media (max-width: 865px){
+  .form{
+    width: 100%;
+  }
+}

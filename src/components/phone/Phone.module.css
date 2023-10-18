@@ -1,0 +1,8 @@
+.phone{
+  font-weight: 600;
+}
+@media (max-width: 865px){
+  .phone{
+    display: none;
+  }
+}

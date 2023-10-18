@@ -1,0 +1,32 @@
+.user_action{
+  display: flex;
+}
+.favorites{
+  display: flex;
+  position: relative;
+  padding: 10px;
+  cursor: pointer;
+}
+.cartImage, .favoritsImage{
+  width: 38px;
+  height: 38px;
+}
+.favoritsNumber{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top:7px;
+  right: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  background-color: #fdb819;
+}
+@media (max-width: 865px){
+  .user_action{
+    order: 2;
+  }
+}

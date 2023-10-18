@@ -1,0 +1,13 @@
+.content{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0%;
+  margin: 50px 0px;
+  background-color: #fff;
+}
+
+@media (max-width: 865px){
+  .content{
+    flex-wrap: wrap;
+  }
+}

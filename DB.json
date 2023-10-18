@@ -1,0 +1,99 @@
+{
+  "advantages": [
+    {
+      "id":                   "1",
+      "images":               "https://chromium.themes.zone/simple/wp-content/uploads/sites/2/2018/05/delivery-truck-1.png", 
+      "name":                 "FREE DELIVERY", 
+      "description":          "Worldwide from $75"
+    },
+    {
+      "id":                   "2",
+      "images":               "https://chromium.themes.zone/simple/wp-content/uploads/sites/2/2018/05/reload-1.png",
+      "name":                 "EASY RETURNS", 
+      "description":          "365 days for free returns"
+    },
+    {
+      "id":                   "3",
+      "images":               "https://chromium.themes.zone/simple/wp-content/uploads/sites/2/2018/05/wallet-1.png",
+      "name":                 "COMFORT PAYMENTS", 
+      "description":          "Credit Cards Available"
+    },
+    {
+      "id":                   "4",
+      "images":               "https://chromium.themes.zone/simple/wp-content/uploads/sites/2/2018/05/gift-1.png",
+      "name":                 "FREE GIFTS",
+      "description":          "Get gifts and discounts"
+    }
+  ],
+  "category": [
+    {"id":"1","name":"Baby Car Seats", "images":"", "description": "Servicing your vehicle is easy when you shop with us We have the high-quality auto parts you need for a successful repair"},
+    {"id":"2","name":"Car & Motorbike Care", "images":"", "description": "Servicing your vehicle is easy when you shop with us We have the high-quality auto parts you need for a successful repair"},
+    {"id":"3","name":"Car & Vehicle Electronics", "images":"", "description": "Servicing your vehicle is easy when you shop with us We have the high-quality auto parts you need for a successful repair"},
+    {"id":"4","name":"Car Accessories", "images":"", "description": "Servicing your vehicle is easy when you shop with us We have the high-quality auto parts you need for a successful repair"},
+    {"id":"5","name":"Car Parts", "images":"", "description": ""},
+    {"id":"6","name":"Gifts & Merchandise", "images":"", "description": ""},
+    {"id":"7","name":"Navigation Devices", "images":"", "description": ""},
+    {"id":"8","name":"Oils & Fluids", "images":"", "description": ""},
+    {"id":"9","name":"Paintwork", "images":"", "description": ""},
+    {"id":"10","name":"Tools & Equipment", "images":"", "description": ""},
+    {"id":"11","name":"Transporting & Storage", "images":"", "description": ""},
+    {"id":"12","name":"Tyres & Rims", "images":"", "description": ""}
+  ],
+  "settings":{
+    "name":    "Chromium",
+    "phone":   "0 (800) 423-754",
+    "addres":  "Chromium Co , 25 Silicon Road, London D04 89GR",
+    "logo":    "",
+    "timeJob": "Monday – Friday 8:00 to 19:00",
+    "eMail":   "test@chromium.com"
+  },
+  "listPages": [
+    {"id":"1", "name":"Home", "url":"/", "description":""},
+    {"id":"2", "name":"Shop", "url":"/", "description":""},
+    {"id":"3", "name":"Wishlist", "url":"/account", "description":""},
+    {"id":"4", "name":"My account", "url":"/account", "description":""},
+    {"id":"5", "name":"Blog", "url":"/blog", "description":""},
+    {"id":"6", "name":"About Us", "url":"/about", "description":""},
+    {"id":"7", "name":"Gallery", "url":"/gallery", "description":""},
+    {"id":"8", "name":"Contacts", "url":"/contact", "description":"The Alumalite Big Step Side Bars install in minutes, providing great looks, convenience and safety for your vehicle."}
+  ],
+  "product": [
+    {"id":"1", "name":"Названия1", "images":[{"id":"1", "url":"https://d1350.com/wa-data/public/shop/products/56/44/94456/images/13643/13643.970.jpg"}], "promotion":"sale", "category":["3","1"], "description":"описания", "price": "100", "rating":0, "reviews":[{"id":"0", "text":"Comment", "autgor":"author", "photo":"" ,"eMail":"e-mail"}]},
+    {"id":"2", "name":"Названия2", "images":[{"id":"1", "url":"https://www.oponeo.pl/Temp/imperial-ecosport-2-11575-f-f-l700-sk4.webp"}], "promotion":"sale", "category":["1"], "description":"описания", "price": "100", "rating":0, "reviews":[{"id":"0", "text":"Comment", "autgor":"author", "photo":"" ,"eMail":"e-mail"}]},
+    {"id":"3", "name":"Названия3", "images":[], "promotion":"",  "category":["2"], "description":"описания", "price": "100", "rating":0, "reviews":[]},
+    {"id":"4", "name":"Названия4", "images":[], "promotion":"", "category":["7"], "description":"описания", "price": "100", "rating":0, "reviews":[]},
+    {"id":"5", "name":"Названия5", "images":[], "promotion":"", "category":["1","2"], "description":"описания", "price": "100", "rating":0, "reviews":[]},
+    {"id":"6", "name":"Названия6", "images":[], "promotion":"", "category":["6"], "description":"описания", "price": "100", "rating":0, "reviews":[]},
+    {"id":"7", "name":"Названия7", "images":[], "promotion":"", "category":["3"], "description":"описания", "price": "100", "rating":0, "reviews":[]},
+    {"id":"8", "name":"Названия8", "images":[{"id":"1", "url":"https://cdn.baz-on.ru/pub/c1220/productphoto/0000/60/0000_60_845.jpg"}], "promotion":"", "category":["1"], "description":"описания", "price": "100", "rating":0, "reviews":[]},
+    {"id":"9", "name":"Названия9", "images":[], "promotion":"", "category":["1"], "description":"описания", "price": "100", "rating":0, "reviews":[]},
+    {"id":"10", "name":"пакетный товар1", "images":[], "promotion":"", "category":["0"], "description":"описания", "price": "100", "rating":0, "reviews":[]},
+    {"id":"11", "name":"пакетный товар2", "images":[], "promotion":"", "category":["0"], "description":"описания", "price": "100", "rating":0, "reviews":[]}
+  ],
+  "sliderHome":[
+    {"id":"1", "name":"exciting bundle", "description":"thos is most comprehensive vehicle treatment", "category":"by from us & get your", "images":"https://www.galferrussia.ru/images/galfer/bodegon-evo-r-series_v5.png", "url":"10"},
+    {"id":"2", "name":"shock absorbers lowrider", "description":"Bigfoot signature detail. This is our most comprehensive vehicle treatment.", "category":"get your", "images":"https://www.autocentre.ua/wp-content/uploads/2016/06/zzz7.png", "url":"11"}
+  ],
+  "slider":[
+    {"id":"1","name":"wheels & tires", "images":"https://kartinkin.net/uploads/posts/2021-07/1627093597_5-kartinkin-com-p-fon-protektor-shin-krasivo-5.jpg", "description":"Low Prices. Price match", "category":"1"},
+    {"id":"2","name":"body parts", "images":"https://kartinkin.net/uploads/posts/2021-07/1627093597_5-kartinkin-com-p-fon-protektor-shin-krasivo-5.jpg", "description":"Low Prices. Price match", "category":"2"},
+    {"id":"3","name":"interior & accessories", "images":"https://kartinkin.net/uploads/posts/2021-07/1627093597_5-kartinkin-com-p-fon-protektor-shin-krasivo-5.jpg", "description":"Low Prices. Price match", "category":"3"}
+  ],
+  "blog":[
+    {"id":"1","name":"Стартавой блог","author":"Автор", "images":"https://s0.rbk.ru/v6_top_pics/media/img/7/25/346857125405257.jpg", "sub":"Короткое описание", "description":"Описания1"},
+    {"id":"2","name":"Стартавой блог","author":"Автор", "images":"", "sub":"Короткое описание", "description":"Описания1"}
+  ],
+  "about":[
+    {"id":"1", "name":"THE CHROMIUM STORY","description":"The more we drive the car the better they seem to operate. No noise, just stopping power! Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur erit qui in ea voluptate verit qui in ea voluptate vele.Phasellus rhoncus a dui quis elemen turn. In non feugiat massa.", "images":"https://investprofit.info/wp-content/uploads/2020/07/graf_kotir.png"},
+    {"id":"2", "name":"THE CHROMIUM FEATURES","description":"description", "images":"https://4analytics.ru/images/stories/FAQ/2_4_grafiki/2_4_grafik_4.jpg"},
+    {"id":"3", "name":"Названия блока3","description":"Описания блока3", "images":"https://excelhack.ru/wp-content/uploads/2017/09/%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA-%D0%B2-excel-%D0%BD%D0%B0-%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B5-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%8B-%D0%B4%D0%B2%D0%B0-%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0.jpg"}
+  ],
+  "gallery":[
+    {"id":"1","images":"https://avatars.mds.yandex.net/get-vertis-journal/3934100/2020-02-05-01473b316f4f4f4a9096ba0e29da473c.jpg_1622736151217/orig"},
+    {"id":"2","images":"https://avatars.mds.yandex.net/get-vertis-journal/4465444/2020-02-05-adaa01d868ed4a2898e9f794fafa5fc9.jpg_1622736151217/orig"},
+    {"id":"3","images":"https://otkritkis.com/wp-content/uploads/2022/02/02ebdb7766f42ad68d6b05c8758f3fed.jpg"},
+    {"id":"4","images":"https://i.ytimg.com/vi/akMm57uBkLA/maxresdefault.jpg"},
+    {"id":"5","images":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXpshskZpgHbJz59FkA2XK-Z722zXQBs3LIQ&usqp=CAU"},
+    {"id":"6","images":"https://i.ytimg.com/vi/hrNJ6zFKQYI/maxresdefault.jpg"}
+  ]
+}

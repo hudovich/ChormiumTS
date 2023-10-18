@@ -1,0 +1,31 @@
+.box{
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+}
+.name{
+  padding: 10px 0px;
+  color: #fff;
+  font-weight: 600;
+}
+.item{
+  display: flex;
+  align-items: center;
+}
+.item a{
+  color: #9a9a9a;
+  padding: 5px;
+  transition: all 0.5s;
+}
+.item a:hover{
+  color: #fdb819;
+  transition: all 0.5s;
+}
+.dot{
+  display: block;
+  content:'';
+  background-color: #fdb819;
+  width: 5px;
+  height: 5px;
+  margin-right: 5px;
+}

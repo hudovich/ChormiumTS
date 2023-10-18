@@ -1,0 +1,56 @@
+.size{
+  padding: 10px 10%;
+  background-color: #f4f2f2;
+}
+.box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  margin: 20px 0px;
+}
+.breadcrumbs{
+  margin-top: 15px;
+}
+.images{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  max-width: 100%;
+  overflow: hidden;
+}
+.images img{
+  width: 100%;
+}
+.content{
+  padding: 25px;
+}
+.name{
+  font-weight: 600;
+  font-size: 32px;
+}
+.author{
+  font-size: 14px;
+  color: #bbbbbb;
+  margin: 10px 0px;
+}
+.description{
+  font-size: 16px;
+  text-align: justify;
+}
+@media (max-width: 1150px){
+  .size{
+   padding: 10px 5%;
+  }
+}
+@media (max-width: 1020px){
+  .size{
+    padding: 10px 20px;
+  }
+}
+@media (max-width: 865px){
+  .size{
+    padding: 10px 0px;
+  }
+} 

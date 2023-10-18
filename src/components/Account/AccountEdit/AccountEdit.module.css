@@ -1,0 +1,50 @@
+.formAccount{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0px 25px 25px 25px;
+}
+.formAccount input{
+  border: 1px solid #dbdbdb;
+  padding: 8px;
+}
+.formAccount input:focus{
+  -webkit-box-shadow: 0 0 2px 0px rgba(0,0,0,.2);
+  box-shadow: 0 0 6px 0px rgba(0,0,0,.1);
+  background-color: #fff;
+}
+.formAccount span {
+  color: red; 
+}
+.first{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.item{
+  width: 100%;
+}
+.button{
+  width: 180px;
+  background-color: #fdb819;
+  transition: all 0.5s;
+  border: 0px;
+  padding: 13px 8px;
+}
+.button:hover{
+  background-color: #000;
+  color: #fff;
+  transition: all 0.5s;
+}
+.item, .email, .password, .button{
+  margin: 0px 25px;
+}
+.password p {
+  font-size: 18px;
+  font-weight: bold;
+}
+@media (max-width: 865px){
+  .first{
+    flex-wrap: wrap;
+  }
+}

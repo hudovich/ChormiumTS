@@ -1,0 +1,14 @@
+.logo a:hover{
+  background-color: transparent;
+}
+.logo img{
+  max-width: 200px; 
+}
+.logo{
+  margin: 10px;
+}
+@media (max-width: 865px){
+  .logo{
+    order: 1;
+  }
+}

@@ -1,0 +1,28 @@
+.footer{
+  background-color: #212121;
+  color: #9a9a9a;
+}
+.size{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10%;
+}
+
+
+@media (max-width: 1150px){
+  .size{
+   padding: 10px 5%;
+  }
+}
+@media (max-width: 1020px){
+  .size{
+    padding: 10px 20px;
+  }
+}
+@media (max-width: 865px){
+  .size{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 30px;
+  }
+}

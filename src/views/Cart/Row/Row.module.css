@@ -1,0 +1,38 @@
+.count{
+  display: flex;
+  align-items: center;
+  width: 100px;
+  justify-content: space-between;
+  background-color: rgb(227, 227, 227);
+}
+.button{
+  cursor: pointer;
+  padding: 10px;
+}
+.row th{
+
+  min-height: 100px;
+  min-width: 100px;
+  border: 1px solid #e1e1e1;
+}
+.x{
+  text-transform: uppercase;
+  padding: 1px 6px;
+  color: #626262;
+  cursor: pointer;
+  border: 1px solid #626262;
+  border-radius: 2px;
+  margin: 8px;
+}
+.name{
+  width: 50%;
+}
+.images{
+  width: 15%;
+}
+.images img{
+  max-width: 120px;
+}
+.price{
+  width: 10%;
+}
