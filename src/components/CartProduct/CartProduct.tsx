@@ -1,6 +1,6 @@
 import s from './CartProduct.module.css'
 import { FC } from "react";
-import like from '../../assets/icon/favorits.png'
+import WishIcon from '../../assets/icon/wish.js'
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useActions } from '../../hook/useActions'
@@ -18,7 +18,7 @@ const CartProduct: FC = ({content}) => {
     return(
       <div className={s.box}>
         <div className={s.like} onClick={()=>{addWish({wishlist:content})}}>
-            <img src={like || null} alt="like" />
+          <WishIcon id={content.id}/>
         </div>
         <Link to={'/'+cat.id+'/'+content.id}>
           <div className={s.top}>

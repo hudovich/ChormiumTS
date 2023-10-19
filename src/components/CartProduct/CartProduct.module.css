@@ -16,6 +16,19 @@
   opacity: 1;
   transition: all 1s;
 }
+
+.likeIcon{
+  fill:none; 
+  stroke-linejoin:round; 
+  stroke-width:5;
+  stroke:#000;
+}
+.likeIconActive{
+  fill:none; 
+  stroke-linejoin:round; 
+  stroke-width:5;
+  stroke:#fdb819;
+}
 .top{
   display: flex;
   justify-content: space-around;
@@ -46,7 +59,7 @@
   z-index: 3;
   transition: all 1s;
 }
-.like img{
+.like embed{
   max-width: 100%;
 }
 .images{

@@ -1,12 +1,18 @@
 import s from './HeaderCart.module.css';
 import favorits from '../../../../../assets/icon/favorits.png'
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import CartMini from '../../../../CartMini/CartMini';
 import { Link } from 'react-router-dom';
 import { useDate } from '../../../../../hook/useDate'
+import { useActions } from '../../../../../hook/useActions'
 
 let HeaderCart: FC = () => {
   const { wishlist } = useDate()
+  const { getLocal } = useActions()
+
+  useEffect(()=>{
+    getLocal()
+  },[])
   return(
     <div className={s.user_action}>
         <Link to='/wishlist' className={s.favorites}>

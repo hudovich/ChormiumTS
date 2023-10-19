@@ -3,7 +3,7 @@ import s from './Row.module.css'
 import { actions } from '../../../store/slice/cart/cart.slice'
 
 const Row = ({data}) => {
-
+  console.log(data);
   const dispatch = useDispatch();
 
   return(
@@ -24,14 +24,14 @@ const Row = ({data}) => {
         <div className={s.count}>
           <div 
             className={s.button}
-            onClick={()=>dispatch(actions.question({id:data.id, boolean:false}))}
+            onClick={()=>dispatch(actions.question({id:data.product.id, boolean:false}))}
           >
             -
           </div>
             {data.quantity||0}
           <div 
             className={s.button}
-            onClick={()=>dispatch(actions.question({id:data.id, boolean:true}))}
+            onClick={()=>dispatch(actions.question({id:data.product.id, boolean:true}))}
           >
             +
           </div>

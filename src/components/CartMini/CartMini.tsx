@@ -26,7 +26,7 @@ const CartMini = () => {
           <ul>
             {cart.productList.map((e)=>{
               if (e.id>cart.productList.length-3){
-                return(<li key={e.id}>{e.product.name}</li>)
+                return(<li key={e.product.id}>{e.product.name}</li>)
               }
             })}
           </ul>

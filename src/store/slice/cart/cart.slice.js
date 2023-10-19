@@ -11,8 +11,8 @@ export const CartSlice = createSlice({
   initialState,
   reducers:{
     question: (state, action) => {
-      let data = state.productList[(action.payload.id)-1];
-      
+      let index = state.productList.findIndex((e)=> e.product.id == action.payload.id)
+      let data = state.productList[index];
       if(action.payload.boolean){ 
         data.quantity =  data.quantity+1
         data.subtotal = data.subtotal + Number(data.product.price) 

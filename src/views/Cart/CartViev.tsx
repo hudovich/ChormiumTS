@@ -43,7 +43,7 @@ const CatrViev = () => {
               <tbody>
               {cart.productList.map(e=>{
                 return(
-                    <Row key={e.id} data = {e}/>
+                    <Row key={e.product.id} data = {e}/>
                   )
                 })
               }
