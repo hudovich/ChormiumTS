@@ -13,6 +13,7 @@ import { reducer as CartSlice } from "./slice/cart/cart.slice";
 import { reducer as search } from "./slice/search/search.slice";
 import { reducer as user } from "./slice/user/user.slice";
 import { reducer as wishlist } from "./slice/wishlist/wishlist.slice"
+import { reducer as Register } from "./slice/registration/regist.slice"
 
 
 export const reducers = combineReducers({
@@ -30,4 +31,5 @@ export const reducers = combineReducers({
   blogPost: BlogPost,
   search: search,
   wishlist: wishlist,
+  register: Register,
 })

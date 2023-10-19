@@ -18,6 +18,7 @@ import * as addWish from "../store/slice/wishlist/wishlist.slice"
 import * as getLocal from "../store/slice/wishlist/wishlist.slice"
 import * as delAllWish from "../store/slice/wishlist/wishlist.slice"
 import * as delWish from "../store/slice/wishlist/wishlist.slice"
+import * as postUser from "../store/slice/registration/regist.action"
 
 export const rootActions = {
   ...getAbout,
@@ -40,4 +41,5 @@ export const rootActions = {
   ...getLocal.actions,
   ...delAllWish.actions,
   ...delWish.actions,
+  ...postUser,
 }

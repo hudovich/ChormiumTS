@@ -1,20 +1,34 @@
 import s from './Registration.module.css'
 import { Link } from 'react-router-dom';
 import { useState, FC } from 'react';
+import { useActions } from '../../../hook/useActions'
 
 const startData = {
   name:'',
+  lastName: '',
+  grups: 1,
+  favorites:[],
+  cart:[],
   email:'',
-  password:'',
+  password: '',
+  orders:[],
+  addres:{
+    region:'',
+    streetAddress:'',
+    city:'',
+    postcode:'',
+  }
 }
 
 const Registration: FC = () => {
   const [data, getUser] = useState(startData);
 
+  const { postUser } = useActions()
+
   const sendUser = (e) => {
     e.preventDefault();
-    console.log(data);
     getUser(startData);
+    postUser(data);
   }
 
   return(
