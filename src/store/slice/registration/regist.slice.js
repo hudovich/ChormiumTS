@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { postUser } from "./regist.action"
 const initialState = {
-  isLoading:'',
+  isLoading:false,
   error:'',
-  success:'',
+  success:false,
 }
 export const Register = createSlice({
   name:'registration',
@@ -12,18 +12,16 @@ export const Register = createSlice({
   extraReducers: builder => {
     builder
       .addCase(postUser.pending, state=>{
-        console.log('загрузка')
+        state.isLoading = true;
       })
       .addCase(postUser.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.success = action.payload;
-        console.log('Успех')
+        state.success = true;
       })
       .addCase(postUser.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message
-        state.success = []
-        console.log('Ошибка')
+        state.success = ''
       })
   }
 })

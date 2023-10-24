@@ -12,6 +12,8 @@ import * as addProductCart from "../store/slice/cart/cart.slice"
 import * as delProductCart from "../store/slice/cart/cart.slice"
 import * as delAllProductCart from "../store/slice/cart/cart.slice"
 import * as getlocalCart from "../store/slice/cart/cart.slice"
+import * as getUserCart from "../store/slice/cart/cart.slice"
+
 import * as addSearch from "../store/slice/search/search.slice"
 import * as getSearchProduct from "../store/slice/search/search.action"
 import * as addWish from "../store/slice/wishlist/wishlist.slice"
@@ -19,6 +21,11 @@ import * as getLocal from "../store/slice/wishlist/wishlist.slice"
 import * as delAllWish from "../store/slice/wishlist/wishlist.slice"
 import * as delWish from "../store/slice/wishlist/wishlist.slice"
 import * as postUser from "../store/slice/registration/regist.action"
+import * as getLogin from "../store/slice/user/user.action"
+import * as getAutorization from "../store/slice/user/user.action"
+import * as putCart from "../store/slice/cart/cart.action"
+import * as getCartUser from "../store/slice/cart/cart.action"
+import * as exitUser from "../store/slice/user/user.slice"
 
 export const rootActions = {
   ...getAbout,
@@ -42,4 +49,10 @@ export const rootActions = {
   ...delAllWish.actions,
   ...delWish.actions,
   ...postUser,
+  ...getLogin,
+  ...getAutorization,
+  ...exitUser.actions,
+  ...putCart,
+  ...getCartUser,
+  ...getUserCart.actions,
 }

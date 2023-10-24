@@ -2,7 +2,7 @@ import { useDate } from '../../../hook/useDate'
 import s from './Orders.module.css'
 const Orders = () => {
 
-  const { user } = useDate(); 
+  const { user } = useDate();
   if(user.user.orders.length){
     return(
       <table className={s.list}>

@@ -4,9 +4,8 @@ import { API_URL } from "../../const";
 export const postUser = createAsyncThunk(
   'registration',
   async(date, thunkApi) => {
-    debugger
     try{
-      const response = await fetch(`${API_URL}users`,{
+      const response = await fetch(`${API_URL}register`,{
         method: 'POST',
         body: JSON.stringify(date),
         headers: {

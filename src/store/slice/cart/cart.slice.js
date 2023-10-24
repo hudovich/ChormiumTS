@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { putCart, getCartUser } from "./cart.action"
 
 const initialState = {
   productList:[],
-  userId:1,
+  idUser:'',
   total:0
 }
 
@@ -29,8 +30,6 @@ export const CartSlice = createSlice({
         state.productList = date.state.productList
         if(state.productList.length){
           if(state.productList.some((e)=>action.payload.product.id == e.product.id)){
-            console.log('Already in cart');
-          }else{
             state.productList.push({
               id:state.productList.length+1,
               product: action.payload.product,
@@ -43,9 +42,7 @@ export const CartSlice = createSlice({
       }else{
         if(state.productList.length){
           localStorage.cart = JSON.stringify ({state});
-          if(state.productList.some((e)=>action.payload.product.id == e.product.id)){
-            console.log('Already in cart');
-          }else{
+          if(!state.productList.some((e)=>action.payload.product.id == e.product.id)){
             state.productList.push({
               id:state.productList.length+1,
               product: action.payload.product,
@@ -82,7 +79,46 @@ export const CartSlice = createSlice({
       if(date === undefined && state.productList.length){
         localStorage.cart = JSON.stringify ({state});
       }
+    },
+    getUserCart: (state, action) => {
+      state.idUser = action.payload
+      localStorage.cart = JSON.stringify ({state});
     }
+  },
+  extraReducers: builder => {
+    builder
+      .addCase(putCart.pending, state=>{
+        console.log("загрузка")
+      })
+      .addCase(putCart.fulfilled, (state, action)=>{
+        console.log("Ответ сервера")
+        console.log(action)
+      })
+      .addCase(putCart.rejected, state=>{
+        console.log("Ошибка")
+      })
+
+
+      .addCase(getCartUser.pending, state=>{
+        console.log("load")
+      })
+      .addCase(getCartUser.fulfilled, (state, action)=>{
+        console.log(action.payload[0].productList)
+        action.payload[0].productList.map( e =>{
+          if(!state.productList.some((m)=>e.product.id == m.product.id)){
+            state.productList.push({
+              id:state.productList.length+1,
+              product: e.product,
+              quantity: e.quantity ? e.quantity: 1, 
+              subtotal: e.subtotal ? e.subtotal : Number(e.product.price),
+            })
+            localStorage.cart = JSON.stringify ({state}); 
+          }
+        })
+      })
+      .addCase(getCartUser.rejected, state=>{
+        console.log("error")
+      })
   }
 })
 

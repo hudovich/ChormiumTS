@@ -3,7 +3,6 @@ import s from './Row.module.css'
 import { actions } from '../../../store/slice/cart/cart.slice'
 
 const Row = ({data}) => {
-  console.log(data);
   const dispatch = useDispatch();
 
   return(

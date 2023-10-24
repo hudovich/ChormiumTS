@@ -1,56 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getLogin, getAutorization } from "./user.action";
 
 const initialState = {
-  user:{
-    id:1,
-    name:'Виталий',
-    lastName: 'Гудович',
-    grups: 1,
-    favorites:[],
-    cart:[],
-    email:'vitaliycall@gmail.com',
-    password: 'admin',
-    orders:[
-      {
-        id:1,
-        quantity:2,
-        subtotal:200,
-        status: 0,
-        product:{
-          id:2,
-          name:"Названия2", 
-          images:[{id:1, url:"https://www.oponeo.pl/Temp/imperial-ecosport-2-11575-f-f-l700-sk4.webp"}],
-          promotion:"sale",
-          category:[1], description:"описания",
-          price: 100, 
-          rating:0,
-          reviews:[{id:0, text:"Comment", autgor:"author", photo:"" ,eMail:"e-mail"}]
-        },
-      },
-      {
-        id:2,
-        quantity:2,
-        subtotal:200,
-        status: 0,
-        product:{
-          id:2,
-          name:"Названия2", 
-          images:[{id:1, url:"https://www.oponeo.pl/Temp/imperial-ecosport-2-11575-f-f-l700-sk4.webp"}],
-          promotion:"sale",
-          category:[1], description:"описания",
-          price: 100, 
-          rating:0,
-          reviews:[{id:0, text:"Comment", autgor:"author", photo:"" ,eMail:"e-mail"}]
-        },
-      }
-    ],
-    addres:{
-      region:'',
-      streetAddress:'',
-      city:'',
-      postcode:'',
-    }
-  },
+  user:'',
   token:'',
   isLoading:false,
   error: '',
@@ -59,7 +11,41 @@ const initialState = {
 export const User = createSlice({
   name:'user',
   initialState,
-  reducer:{},
+  reducers:{
+    exitUser: (state)=>{
+      state.user = ''
+      state.token = ''
+      localStorage.removeItem('token')
+    }
+  },
+  extraReducers: builder => {
+    builder
+    .addCase(getLogin.pending, state=>{
+      state.isLoading = true;
+    })
+    .addCase(getLogin.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.user = action.payload.user
+      state.token = action.payload.accessToken
+      localStorage.token = action.payload.accessToken;
+      localStorage.idUser = action.payload.user.id;
+    })
+    .addCase(getLogin.rejected, (state, action) => {
+      state.isLoading = false;
+      state.user = []
+    })
+    .addCase(getAutorization.pending, state=>{
+      state.isLoading = true;
+    })
+    .addCase(getAutorization.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.user = action.payload;
+    })
+    .addCase(getAutorization.rejected, (state) => {
+      state.isLoading = false;
+      state.user = []
+    })
+  }
 })
 
 export const { actions, reducer } = User;
