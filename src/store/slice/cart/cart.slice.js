@@ -29,7 +29,7 @@ export const CartSlice = createSlice({
       if((localStorage.cart !== undefined) && (date.state.productList.length)){
         state.productList = date.state.productList
         if(state.productList.length){
-          if(state.productList.some((e)=>action.payload.product.id == e.product.id)){
+          if(!state.productList.some((e)=>action.payload.product.id == e.product.id)){
             state.productList.push({
               id:state.productList.length+1,
               product: action.payload.product,
@@ -106,6 +106,7 @@ export const CartSlice = createSlice({
         console.log(action.payload[0].productList)
         action.payload[0].productList.map( e =>{
           if(!state.productList.some((m)=>e.product.id == m.product.id)){
+            debugger
             state.productList.push({
               id:state.productList.length+1,
               product: e.product,

@@ -8,11 +8,9 @@ import { useEffect } from "react"
 
 const Account = () => {
   const { user, cart } = useDate(); 
-  const { exitUser, getAutorization,  getUserCart, putCart} = useActions();
+  const { exitUser, getAutorization} = useActions();
   useEffect(()=>{
     if(localStorage.token) getAutorization();
-    //if(user.user.id) getUserCart(user.user.id);
-    if(cart.idUser)putCart()
   },[])
 console.log(cart)
   if(user.isLoading){

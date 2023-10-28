@@ -13,7 +13,6 @@ import * as delProductCart from "../store/slice/cart/cart.slice"
 import * as delAllProductCart from "../store/slice/cart/cart.slice"
 import * as getlocalCart from "../store/slice/cart/cart.slice"
 import * as getUserCart from "../store/slice/cart/cart.slice"
-
 import * as addSearch from "../store/slice/search/search.slice"
 import * as getSearchProduct from "../store/slice/search/search.action"
 import * as addWish from "../store/slice/wishlist/wishlist.slice"

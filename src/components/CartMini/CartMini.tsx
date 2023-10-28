@@ -6,11 +6,14 @@ import { useDate } from '../../hook/useDate'
 import { useActions } from '../../hook/useActions'
 
 const CartMini = () => {
-  const { cart } = useDate()
-  const { getlocalCart } = useActions()
+  const { cart, user } = useDate()
+  const { getlocalCart, getCartUser} = useActions()
   useEffect(()=>{
-    if(localStorage.cart !== undefined){
-      getlocalCart()
+    if(user.user) {
+      getCartUser(user.user.id);
+    }
+    if(localStorage.cart !== undefined && !user.user){
+      getlocalCart();
     }
   },[])
   return(
