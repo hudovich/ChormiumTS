@@ -468,29 +468,7 @@
   ],
   "wish": [
     {
-      "wish": [
-        {
-          "id": "8",
-          "product": {
-            "id": "8",
-            "name": "Названия8",
-            "images": [
-              {
-                "id": "1",
-                "url": "https://cdn.baz-on.ru/pub/c1220/productphoto/0000/60/0000_60_845.jpg"
-              }
-            ],
-            "promotion": "",
-            "category": [
-              "1"
-            ],
-            "description": "описания",
-            "price": "100",
-            "rating": 0,
-            "reviews": []
-          }
-        }
-      ],
+      "wish": [],
       "idUser": 1,
       "id": 1
     }

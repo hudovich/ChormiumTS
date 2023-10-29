@@ -7,12 +7,8 @@ import Header from '../../components/layout/header/Header'
 import CartProduct from '../../components/CartProduct/CartProduct'
 
 const Wishlist = () => {
-  const { wishlist, user } = useDate()
-  const { getLocal, delAllWish, delWish, appDateWish } = useActions();
-  useEffect(()=>{
-    getLocal();
-    if(user.user) appDateWish({idWish: wishlist.idWish, data: wishlist.wishlist})
-  },[wishlist.wishList])
+  const { wishlist } = useDate()
+  const { delAllWish, delWish } = useActions();
   return(
     <>
     <Header />

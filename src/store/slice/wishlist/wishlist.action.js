@@ -34,7 +34,6 @@ export const appDateWish = createAsyncThunk(
         }
       })
       let json = await response.json();
-      console.log(json)
       return(json);
     }
     catch(error){

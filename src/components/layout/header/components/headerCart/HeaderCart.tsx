@@ -8,7 +8,11 @@ import { useActions } from '../../../../../hook/useActions'
 
 let HeaderCart: FC = () => {
   const { wishlist, user } = useDate()
-  const { getLocal, getWish, getCart, getlocalCart} = useActions()
+  const { getLocal, getWish, getCart, getlocalCart, appDateWish} = useActions()
+
+  useEffect(()=>{
+    if(user.user) appDateWish({idWish: wishlist.idWish, data: wishlist.wishlist})
+  },[wishlist.wishlist.length])
 
   useEffect(()=>{
     if(user.user) {
@@ -17,7 +21,7 @@ let HeaderCart: FC = () => {
     }
     if(localStorage.cart !== undefined && !user.user){
       getLocal();
-      getlocalCart();
+      getlocalCart(); 
     }
   },[user.user])
   return(
