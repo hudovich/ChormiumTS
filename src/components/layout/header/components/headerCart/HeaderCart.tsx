@@ -7,12 +7,19 @@ import { useDate } from '../../../../../hook/useDate'
 import { useActions } from '../../../../../hook/useActions'
 
 let HeaderCart: FC = () => {
-  const { wishlist } = useDate()
-  const { getLocal } = useActions()
+  const { wishlist, user } = useDate()
+  const { getLocal, getWish, getCart, getlocalCart} = useActions()
 
   useEffect(()=>{
-    getLocal()
-  },[])
+    if(user.user) {
+      getCart(user.user.id);
+      getWish(user.user.id);
+    }
+    if(localStorage.cart !== undefined && !user.user){
+      getLocal();
+      getlocalCart();
+    }
+  },[user.user])
   return(
     <div className={s.user_action}>
         <Link to='/wishlist' className={s.favorites}>

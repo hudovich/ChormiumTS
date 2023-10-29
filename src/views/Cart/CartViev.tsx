@@ -9,18 +9,23 @@ import { useDate } from '../../hook/useDate'
 
 const CatrViev = () => {
 
-  const { delAllProductCart, getlocalCart, getCartUser } = useActions()
+  const { delAllProductCart, getlocalCart, appDateCartAPI, getCart } = useActions()
 
   const { cart, user } = useDate()
   let sub = Number(0);
+
   useEffect(()=>{
     if(user.user) {
-      getCartUser(user.user.id);
+      getCart(user.user.id);
     }
     if(localStorage.cart !== undefined && !user.user){
       getlocalCart();
     }
-  },[])
+  },[user.user])
+
+  useEffect(()=>{
+    if(user.user) appDateCartAPI({idCart: cart.idCart, data: cart.productList})
+  },[cart.productList])
   return(
     <>
       <Header />

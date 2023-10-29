@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { putCart, getCartUser } from "./cart.action"
+import { getCart, appDateCartAPI } from "./cart.action"
 
 const initialState = {
   productList:[],
+  isLoading: false,
   idUser:'',
-  total:0
+  idCart:'',
+  total:0,
 }
 
 export const CartSlice = createSlice({
@@ -87,26 +89,25 @@ export const CartSlice = createSlice({
   },
   extraReducers: builder => {
     builder
-      .addCase(putCart.pending, state=>{
-        console.log("загрузка")
+      .addCase(appDateCartAPI.pending, state=>{
+        state.isLoading = true;
       })
-      .addCase(putCart.fulfilled, (state, action)=>{
-        console.log("Ответ сервера")
-        console.log(action)
+      .addCase(appDateCartAPI.fulfilled, (state)=>{
+        state.isLoading = false;
       })
-      .addCase(putCart.rejected, state=>{
-        console.log("Ошибка")
+      .addCase(appDateCartAPI.rejected, state=>{
+        state.isLoading = false;
       })
 
 
-      .addCase(getCartUser.pending, state=>{
-        console.log("load")
+      .addCase(getCart.pending, state=>{
+        state.isLoading = true;
       })
-      .addCase(getCartUser.fulfilled, (state, action)=>{
-        console.log(action.payload[0].productList)
+      .addCase(getCart.fulfilled, (state, action)=>{
+        state.isLoading = false;
+        state.idCart = action.payload[0].id
         action.payload[0].productList.map( e =>{
           if(!state.productList.some((m)=>e.product.id == m.product.id)){
-            debugger
             state.productList.push({
               id:state.productList.length+1,
               product: e.product,
@@ -117,8 +118,8 @@ export const CartSlice = createSlice({
           }
         })
       })
-      .addCase(getCartUser.rejected, state=>{
-        console.log("error")
+      .addCase(getCart.rejected, state=>{
+        state.isLoading = false;
       })
   }
 })

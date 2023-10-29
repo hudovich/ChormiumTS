@@ -6,27 +6,24 @@ import * as getCategory from "../store/slice/category/category.action"
 import * as getGallery from "../store/slice/gallery/gallery.action"
 import * as getSliderHeader from "../store/slice/headerSlider/SliderHeader.action"
 import * as getProduct from "../store/slice/products/products.action"
-import * as getSlider from "../store/slice/slider/slider.action"
-import * as getPostSlider from "../store/slice/slider/slider.action"
-import * as addProductCart from "../store/slice/cart/cart.slice"
-import * as delProductCart from "../store/slice/cart/cart.slice"
-import * as delAllProductCart from "../store/slice/cart/cart.slice"
-import * as getlocalCart from "../store/slice/cart/cart.slice"
-import * as getUserCart from "../store/slice/cart/cart.slice"
+import * as sliderAPI from "../store/slice/slider/slider.action"
 import * as addSearch from "../store/slice/search/search.slice"
 import * as getSearchProduct from "../store/slice/search/search.action"
-import * as addWish from "../store/slice/wishlist/wishlist.slice"
-import * as getLocal from "../store/slice/wishlist/wishlist.slice"
-import * as delAllWish from "../store/slice/wishlist/wishlist.slice"
-import * as delWish from "../store/slice/wishlist/wishlist.slice"
+import * as wishSlice from "../store/slice/wishlist/wishlist.slice"
+import * as wishApi from "../store/slice/wishlist/wishlist.action"
 import * as postUser from "../store/slice/registration/regist.action"
 import * as getLogin from "../store/slice/user/user.action"
 import * as getAutorization from "../store/slice/user/user.action"
-import * as putCart from "../store/slice/cart/cart.action"
-import * as getCartUser from "../store/slice/cart/cart.action"
 import * as exitUser from "../store/slice/user/user.slice"
+import * as cartSlice from "../store/slice/cart/cart.slice"
+import * as cartAPI from "../store/slice/cart/cart.action"
 
 export const rootActions = {
+  ...cartSlice.actions,
+  ...cartAPI,
+  ...sliderAPI,
+  ...wishSlice.actions,
+  ...wishApi,
   ...getAbout,
   ...getAdvantages,
   ...getBlog,
@@ -35,23 +32,10 @@ export const rootActions = {
   ...getGallery,
   ...getSliderHeader,
   ...getProduct,
-  ...getSlider,
-  ...getPostSlider,
-  ...addProductCart.actions,
-  ...delProductCart.actions,
-  ...delAllProductCart.actions,
-  ...getlocalCart.actions,
   ...addSearch.actions,
   ...getSearchProduct,
-  ...addWish.actions,
-  ...getLocal.actions,
-  ...delAllWish.actions,
-  ...delWish.actions,
   ...postUser,
   ...getLogin,
   ...getAutorization,
   ...exitUser.actions,
-  ...putCart,
-  ...getCartUser,
-  ...getUserCart.actions,
 }

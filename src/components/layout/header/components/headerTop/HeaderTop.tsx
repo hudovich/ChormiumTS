@@ -1,7 +1,15 @@
 import s from './HeaderTop.module.css'
 import { Link } from 'react-router-dom';
+import { useEffect } from "react";
+import { useDate } from '../../../../../hook/useDate'
+import { useActions } from '../../../../../hook/useActions'
 
 const HedaerTop = () => {
+  const { user } = useDate();
+  const { getAutorization } = useActions();
+  useEffect(()=>{
+    if(!user.user && localStorage.token) getAutorization();
+  },[]);
   return(
     <>
       <div className={s.top_header}>
@@ -11,10 +19,17 @@ const HedaerTop = () => {
             <li><Link to='/wishlist'>WISHLIST</Link></li>
           </ul>
         </div>
+        
         <div className={s.item}>
           <ul>
-            <li><Link to='/login'>SING IN</Link></li>
-            <li><Link to='/registr'>REGISTER</Link></li>
+            {user.user?
+              <li>Hello <Link to="/account">{user.user.name}</Link></li>
+            : 
+              <>
+                <li><Link to='/login'>SING IN</Link></li>
+                <li><Link to='/registr'>REGISTER</Link></li>
+              </>
+            }
           </ul>
         </div>
       </div>

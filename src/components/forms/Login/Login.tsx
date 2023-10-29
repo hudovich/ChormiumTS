@@ -13,7 +13,7 @@ const Login: FC = () => {
 
   const [data, setDataUser] = useState(startData);
   const { user } = useDate();
-  const { getLogin, getCartUser } = useActions()
+  const { getLogin, getCart } = useActions()
   const sendDataUser = (e) => {
     e.preventDefault();
     getLogin(data);
@@ -23,7 +23,7 @@ const Login: FC = () => {
 
   useEffect(()=>{
     if(user.user) {
-      getCartUser(user.user.id);
+      getCart(user.user.id);
       navigate("/account")
     }
   },[user.user])

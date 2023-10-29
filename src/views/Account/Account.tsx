@@ -4,15 +4,10 @@ import Header from "../../components/layout/header/Header"
 import s from "./Account.module.css"
 import { useDate } from "../../hook/useDate"
 import { useActions } from "../../hook/useActions"
-import { useEffect } from "react"
 
 const Account = () => {
-  const { user, cart } = useDate(); 
-  const { exitUser, getAutorization} = useActions();
-  useEffect(()=>{
-    if(localStorage.token) getAutorization();
-  },[])
-console.log(cart)
+  const { user } = useDate(); 
+  const { exitUser } = useActions();  
   if(user.isLoading){
      return(<p>Загрузка</p>)
   }else{

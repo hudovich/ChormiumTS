@@ -461,41 +461,15 @@
   ],
   "cart": [
     {
-      "productList": [
-        {
-          "id": 1,
-          "product": {
-            "id": "2",
-            "name": "Названия2",
-            "images": [
-              {
-                "id": "1",
-                "url": "https://www.oponeo.pl/Temp/imperial-ecosport-2-11575-f-f-l700-sk4.webp"
-              }
-            ],
-            "promotion": "sale",
-            "category": [
-              "1"
-            ],
-            "description": "описания",
-            "price": "100",
-            "rating": 0,
-            "reviews": [
-              {
-                "id": "0",
-                "text": "Comment",
-                "autgor": "author",
-                "photo": "",
-                "eMail": "e-mail"
-              }
-            ]
-          },
-          "quantity": 1,
-          "subtotal": 100
-        }
-      ],
+      "productList": [],
       "idUser": 1,
-      "total": 0,
+      "id": 1
+    }
+  ],
+  "wish": [
+    {
+      "wish": [],
+      "idUser": 1,
       "id": 1
     }
   ]

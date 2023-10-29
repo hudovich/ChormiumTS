@@ -8,10 +8,13 @@
   flex-wrap: wrap;
 }
 .top_header a{
-  font-weight: normal;
-  font-size: 0.800em;
+  
   color: #fff;
   transition: all 0.3s;
+}
+.top_header ul li {
+  font-weight: normal;
+  font-size: 0.800em;
 }
 .top_header a:hover{
   color: #fdb819;

@@ -1,15 +1,15 @@
-import { API_URL } from "../../const";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { API_URL } from "../../const";
 
-export const getCart = createAsyncThunk(
-  'cart',
+export const getWish = createAsyncThunk(
+  'getWish',
   async(action, thunkApi) => {
     try{
-      const response = await fetch( `${API_URL}cart?idUser=${action}`,{
+      const response = await fetch(`${API_URL}wish?idUser=${action}`,{
         method: 'GET',
         headers: {
-          "Content-Type": "application/json"
-        },
+          "Content-type": "application/json"
+        }
       })
       let json = await response.json();
       return(json);
@@ -20,18 +20,19 @@ export const getCart = createAsyncThunk(
   }
 )
 
-export const appDateCartAPI = createAsyncThunk(
-  'appDateCartAPI',
+export const appDateWish = createAsyncThunk(
+  'appDateWish',
   async(action, thunkApi) => {
+    debugger
     try{
-      const response = await fetch(`${API_URL}cart/${action.idCart}`,{
-        method: 'PATCH',
+      const response = await fetch(`${API_URL}wish/${action.idWish}`,{
+        method:'PATCH',
         body: JSON.stringify({
-            productList: (action.data)
+          wish: action.data
         }),
-        headers:{
+        header:{
           "Content-Type": "application/json"
-        },
+        }
       })
       let json = await response.json();
       console.log(json)
