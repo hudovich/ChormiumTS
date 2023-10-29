@@ -82,7 +82,7 @@ export const wishlist = createSlice({
         state.idUser = action.payload[0].idUser
         state.idWish = action.payload[0].id
         action.payload[0].wish.map( e =>{
-          if(!state.wishlist.some((e)=>action.payload.wishlist.id == e.product.id)){
+          if(state.wishlist.some((e)=>action.payload[0].wish.id == e.product.id)){
             state.wishlist.push({
               id: e.id,
               product: e.product

@@ -25,9 +25,9 @@ export const appDateCartAPI = createAsyncThunk(
   async(action, thunkApi) => {
     try{
       const response = await fetch(`${API_URL}cart/${action.idCart}`,{
-        method: 'PATCH',
+        method:'PATCH',
         body: JSON.stringify({
-            productList: (action.data)
+          productList: (action.data)
         }),
         headers:{
           "Content-Type": "application/json"

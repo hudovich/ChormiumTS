@@ -23,14 +23,13 @@ export const getWish = createAsyncThunk(
 export const appDateWish = createAsyncThunk(
   'appDateWish',
   async(action, thunkApi) => {
-    debugger
     try{
       const response = await fetch(`${API_URL}wish/${action.idWish}`,{
         method:'PATCH',
         body: JSON.stringify({
-          wish: action.data
+          wish: (action.data)
         }),
-        header:{
+        headers:{
           "Content-Type": "application/json"
         }
       })
