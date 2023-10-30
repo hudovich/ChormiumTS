@@ -34,7 +34,26 @@ export const appDateCartAPI = createAsyncThunk(
         },
       })
       let json = await response.json();
-      console.log(json)
+      return(json);
+    }
+    catch(error){
+      thunkApi.rejectWithValue.error
+    }
+  }
+)
+
+export const postCart = createAsyncThunk(
+  'postCart',
+  async(action, thunkApi) => {
+    try{
+      const response = await fetch(`${API_URL}cart`,{
+        method:'POST',
+        body: JSON.stringify(action),
+        headers:{
+          "Content-Type": "application/json"
+        },
+      })
+      let json = await response.json();
       return(json);
     }
     catch(error){

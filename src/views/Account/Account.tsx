@@ -4,10 +4,16 @@ import Header from "../../components/layout/header/Header"
 import s from "./Account.module.css"
 import { useDate } from "../../hook/useDate"
 import { useActions } from "../../hook/useActions"
+import { useEffect } from "react"
 
 const Account = () => {
-  const { user } = useDate(); 
-  const { exitUser } = useActions();  
+  const { user, register } = useDate();
+  const { getAutorization, exitUser } = useActions();
+  useEffect(()=>{
+    if(register.token){
+      getAutorization();
+    }
+  },[register]) 
   if(user.isLoading){
      return(<p>Загрузка</p>)
   }else{

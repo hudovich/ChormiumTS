@@ -1,5 +1,5 @@
 import s from './Registration.module.css'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, redirect, useNavigate } from 'react-router-dom';
 import { useState, useEffect, FC } from 'react';
 import { useActions } from '../../../hook/useActions'
 import { useDate } from '../../../hook/useDate'
@@ -8,11 +8,8 @@ const startData = {
   name:'',
   lastName: '',
   grups: 1,
-  favorites:[],
-  cart:[],
   email:'',
   password: '',
-  orders:[],
   addres:{
     region:'',
     streetAddress:'',
@@ -23,7 +20,7 @@ const startData = {
 
 const Registration: FC = () => {
   const { register } = useDate();
-  const { postUser } = useActions()
+  const { postUser, postWish, postCart } = useActions()
   const [data, getUser] = useState(startData);
   const sendUser = (e) => {
     e.preventDefault();
@@ -32,9 +29,12 @@ const Registration: FC = () => {
   }
 
   const navigate = useNavigate()
-
   useEffect(()=>{
-    if(register.success) navigate("/account")
+    if(register.success){
+      postWish({wish: [], idUser: register.user.id})
+      postCart({productList: [], idUser: register.user.id})
+    }
+    if(register.success) navigate("/account");
   },[register.success])
 
     return(

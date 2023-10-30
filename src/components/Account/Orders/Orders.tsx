@@ -3,7 +3,8 @@ import s from './Orders.module.css'
 const Orders = () => {
 
   const { user } = useDate();
-  if(user.user.orders.length){
+  //console.log(user.user.orders.length)
+  if(false){
     return(
       <table className={s.list}>
         <thead className={s.order}>

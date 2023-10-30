@@ -11,10 +11,6 @@ let HeaderCart: FC = () => {
   const { getLocal, getWish, getCart, getlocalCart, appDateWish} = useActions()
 
   useEffect(()=>{
-    if(user.user) appDateWish({idWish: wishlist.idWish, data: wishlist.wishlist})
-  },[wishlist.wishlist.length])
-
-  useEffect(()=>{
     if(user.user) {
       getCart(user.user.id);
       getWish(user.user.id);
@@ -24,6 +20,11 @@ let HeaderCart: FC = () => {
       getlocalCart(); 
     }
   },[user.user])
+  
+  useEffect(()=>{
+    if(user.user.id && wishlist.idWish) appDateWish({idWish: wishlist.idWish, data: wishlist.wishlist})
+  },[wishlist.wishlist.length, wishlist.idWish])
+
   return(
     <div className={s.user_action}>
         <Link to='/wishlist' className={s.favorites}>

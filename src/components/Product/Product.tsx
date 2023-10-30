@@ -2,12 +2,15 @@ import { useState, FC } from 'react';
 import s from './Product.module.css'
 import ProductSlider from '../ProductSlider/ProductSlider';
 import { useActions } from '../../hook/useActions'
+import { useDate } from '../../hook/useDate'
 
 const Product:FC = ({item}) => {
-
   const [count, setBuy] = useState(1);
 
   const { addProductCart, addWish } = useActions();
+  const { wishlist } = useDate()
+
+  const target = wishlist.wishlist.some(e=>e.id == item.id);
 
   const addCart = () => {
     addProductCart({product:item, quantity:count, subtotal:item.price*count})
@@ -32,7 +35,7 @@ const Product:FC = ({item}) => {
             <div className={s.button} onClick={()=>{addCart()}}>Add to cart</div>
           </div>
           <div className={s.wishlist} onClick={()=>{addWish({wishlist:item})}}>
-            Add to Wishlist
+            {target?<>Remove from wishlist</>:<>Add to Wishlist</>}
           </div>
         </div>
       </div>

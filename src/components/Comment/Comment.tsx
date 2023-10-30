@@ -12,12 +12,6 @@ const Comment: FC = ({item}) => {
         item.map( e => {
           return(
           <div key={e.id} className={s.postReviews}>
-            <div className={s.photo}>
-              {e.photo?
-                <img src={e.photo} alt={e.name} />
-              :<p>No photo</p>
-              }
-            </div>
             <div className={s.item}>
               <div className={s.author}>{e.autgor}</div>
               <div className={s.text}>{e.text}</div>

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getWish, appDateWish } from "./wishlist.action";
+import { getWish, appDateWish, postWish } from "./wishlist.action";
 
 const initialState = {
   wishlist:[],
@@ -78,6 +78,7 @@ export const wishlist = createSlice({
         state.isLoading = true
       })
       .addCase(getWish.fulfilled, (state, action)=>{
+        action.payload.length?state.newUser = false:state.newUser = true
         state.isLoading = false;
         state.idUser = action.payload[0].idUser
         state.idWish = action.payload[0].id
@@ -90,7 +91,7 @@ export const wishlist = createSlice({
           }
         })
       })
-      .addCase(getWish.rejected, state=>{
+      .addCase(getWish.rejected, state =>{
         state.isLoading = false;
         state.wishlist = [];
       })
@@ -104,6 +105,16 @@ export const wishlist = createSlice({
       .addCase(appDateWish.rejected, (state, action)=>{
         state.isLoading = false;
         state.error = action
+      })
+
+      .addCase(postWish.pending, state=>{
+        console.log('loading new wish')
+      })
+      .addCase(postWish.fulfilled, (state, action)=>{
+        console.log('create new wish')
+      })
+      .addCase(postWish.rejected, (state, action)=>{
+        console.log('error add new cart')
       })
   }
 })

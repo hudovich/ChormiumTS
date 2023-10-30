@@ -53,6 +53,14 @@
   margin-left: 12px;
   margin-bottom: 25px;
 }
+.wishlist{
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.wishlist:hover{
+  color:#fdb819;
+  transition: all 0.3s;
+}
 @media (max-width: 865px){
   .box{
     display: flex;

@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { postUser } from "./regist.action"
 const initialState = {
+  user:'',
+  token:'',
   isLoading:false,
   error:'',
   success:false,
@@ -16,7 +18,11 @@ export const Register = createSlice({
       })
       .addCase(postUser.fulfilled, (state, action) => {
         state.isLoading = false;
+        state.token = action.payload.accessToken;
         state.success = true;
+        state.user = action.payload.user
+        localStorage.token = action.payload.accessToken;
+        localStorage.idUser = action.payload.user.id;
       })
       .addCase(postUser.rejected, (state, action) => {
         state.isLoading = false;

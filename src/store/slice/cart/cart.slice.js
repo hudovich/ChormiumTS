@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getCart, appDateCartAPI } from "./cart.action"
+import { getCart, appDateCartAPI, postCart } from "./cart.action"
 
 const initialState = {
   productList:[],
@@ -120,6 +120,15 @@ export const CartSlice = createSlice({
       })
       .addCase(getCart.rejected, state=>{
         state.isLoading = false;
+      })
+      .addCase(postCart.pending, state=>{
+        console.log('loading new cart')
+      })
+      .addCase(postCart.fulfilled, state=>{
+        console.log('create new cart')
+      })
+      .addCase(postCart.rejected, state=>{
+        console.log('error add new cart')
       })
   }
 })

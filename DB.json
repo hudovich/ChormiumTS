@@ -447,9 +447,6 @@
       "name": "admin",
       "lastName": "",
       "grups": 1,
-      "favorites": [],
-      "cart": [],
-      "orders": [],
       "addres": {
         "region": "",
         "streetAddress": "",
@@ -472,5 +469,8 @@
       "idUser": 1,
       "id": 1
     }
-  ]
+  ],
+  "comments": [],
+  "orders": [],
+  "contact": []
 }
