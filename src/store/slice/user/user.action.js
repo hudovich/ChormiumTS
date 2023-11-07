@@ -4,6 +4,7 @@ import { API_URL } from "../../const";
  export const getLogin = createAsyncThunk(
   "user",
   async(action, thunkApi) => {
+    debugger
     try{
       const response = await fetch(`${API_URL}login`,{
         method: 'POST',

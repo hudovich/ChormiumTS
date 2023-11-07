@@ -10,7 +10,11 @@ const initialState = {
 export const Register = createSlice({
   name:'registration',
   initialState,
-  reducers:{},
+  reducers:{
+    targetSuccess: (state) => {
+      state.success = false;
+    }
+  },
   extraReducers: builder => {
     builder
       .addCase(postUser.pending, state=>{

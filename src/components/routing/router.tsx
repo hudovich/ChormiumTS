@@ -16,6 +16,7 @@ import Orders from '../Account/Orders/Orders';
 import AccoutnEdit from '../Account/AccountEdit/AccountEdit';
 import AccountAddress from '../Account/AccountAddress/AccontAddress';
 import Wishlist from '../../views/Wishlist/Wishlidt';
+import Buy from '../../views/Buy/Buy';
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
   {
     path:'/wishlist',
     element: <Wishlist />
+  },
+  {
+    path:'/buy',
+    element: <Buy />
   },
   {
     path:'/cart',

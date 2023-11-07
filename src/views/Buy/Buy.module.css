@@ -1,0 +1,60 @@
+.size{
+  padding: 10px 10%;
+  background-color: #f4f2f2;
+}
+.boxform{
+  display: flex;
+  justify-content: space-between;
+}
+.nameBox{
+  font-size: 28px;
+  font-weight: 600;
+  margin: 25px 0px;
+  text-transform: uppercase;
+}
+.row{
+  display: flex;
+  width: 48%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.lastname, .name, .email, .password, .city, .postcode, .region, .street{
+  font-weight: 600;
+  width: 100%;
+}
+.button{
+  font-weight: 600;
+  background:#fdb819;
+  width: 120px;
+  height: 38px;
+  border: none;
+  transition: all 0.3s;
+}
+.button:hover{
+  background:#000;
+  color: #fff;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+@media (max-width: 1150px){
+  .size{
+   padding: 10px 5%;
+  }
+}
+@media (max-width: 1020px){
+  .size{
+    padding: 10px 20px;
+  }
+}
+@media (max-width: 865px){
+  .boxform{
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .row{
+    width: 100%;
+  }
+  .size{
+    padding: 10px 30px;
+  }
+}

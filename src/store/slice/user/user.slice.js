@@ -5,7 +5,7 @@ const initialState = {
   user:'',
   token:'',
   isLoading:false,
-  error: '',
+  error: false,
 }
 
 export const User = createSlice({
@@ -16,6 +16,7 @@ export const User = createSlice({
       state.user = ''
       state.token = ''
       localStorage.removeItem('token')
+      localStorage.removeItem('idUser')
     }
   },
   extraReducers: builder => {
@@ -24,11 +25,18 @@ export const User = createSlice({
       state.isLoading = true;
     })
     .addCase(getLogin.fulfilled, (state, action) => {
+      debugger
+      if(action.payload == undefined || typeof(action.payload) == 'string'){
+        state.error = true;
+      }else{
+        state.user = action.payload.user
+        state.token = action.payload.accessToken
+        localStorage.token = action.payload.accessToken;
+        localStorage.idUser = action.payload.user.id;
+        state.error = false;
+      }
       state.isLoading = false;
-      state.user = action.payload.user
-      state.token = action.payload.accessToken
-      localStorage.token = action.payload.accessToken;
-      localStorage.idUser = action.payload.user.id;
+      
     })
     .addCase(getLogin.rejected, (state, action) => {
       state.isLoading = false;

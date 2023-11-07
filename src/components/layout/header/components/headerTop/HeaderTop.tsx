@@ -8,7 +8,7 @@ const HedaerTop = () => {
   const { user } = useDate();
   const { getAutorization } = useActions();
   useEffect(()=>{
-    if(!user.user && localStorage.token) getAutorization();
+    if(!user.user && localStorage.token && localStorage.idUser) getAutorization();
   },[]);
   return(
     <>

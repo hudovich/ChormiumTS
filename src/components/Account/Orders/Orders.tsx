@@ -1,10 +1,17 @@
 import { useDate } from '../../../hook/useDate'
+import { useActions } from '../../../hook/useActions'
 import s from './Orders.module.css'
+import { useEffect } from 'react';
 const Orders = () => {
 
-  const { user } = useDate();
-  //console.log(user.user.orders.length)
-  if(false){
+  const { user, orders } = useDate();
+  const { getOrders } = useActions();
+
+  useEffect(()=>{
+    getOrders(user.user.id)
+  },[])
+  console.log(orders)
+  if(orders.orders){
     return(
       <table className={s.list}>
         <thead className={s.order}>
@@ -16,7 +23,7 @@ const Orders = () => {
           </tr>
         </thead>
         <tbody className={s.order}>
-        {user.user.orders.map((e)=>{
+        {orders.orders.map((e)=>{
           let status = e.status == 1 ? 'Delivered' : 'In processing'
           return(
             <tr key={e.id}>

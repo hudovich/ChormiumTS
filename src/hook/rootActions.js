@@ -17,8 +17,11 @@ import * as getAutorization from "../store/slice/user/user.action"
 import * as exitUser from "../store/slice/user/user.slice"
 import * as cartSlice from "../store/slice/cart/cart.slice"
 import * as cartAPI from "../store/slice/cart/cart.action"
+import * as OrderAPI from "../store/slice/orders/orders.action"
+import * as targetSuccess from "../store/slice/registration/regist.slice"
 
 export const rootActions = {
+  ...OrderAPI,
   ...cartSlice.actions,
   ...cartAPI,
   ...sliderAPI,
@@ -35,6 +38,7 @@ export const rootActions = {
   ...addSearch.actions,
   ...getSearchProduct,
   ...postUser,
+  ...targetSuccess.actions,
   ...getLogin,
   ...getAutorization,
   ...exitUser.actions,
