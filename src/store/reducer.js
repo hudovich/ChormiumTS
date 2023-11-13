@@ -16,6 +16,7 @@ import { reducer as wishlist } from "./slice/wishlist/wishlist.slice"
 import { reducer as Register } from "./slice/registration/regist.slice"
 import { reducer as Orders } from "./slice/orders/orders.slice";
 import { reducer as comment } from "./slice/comment/comment.slice";
+import { reducer as contact } from "./slice/contact/contact.slice"
 
 
 export const reducers = combineReducers({
@@ -35,5 +36,6 @@ export const reducers = combineReducers({
   search: search,
   wishlist: wishlist,
   register: Register,
-  comment: comment
+  comment: comment,
+  contact: contact,
 })

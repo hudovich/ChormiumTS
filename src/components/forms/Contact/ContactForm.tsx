@@ -1,5 +1,7 @@
 import s from './ContactForm.module.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useActions } from '../../../hook/useActions'
+import { useDate } from '../../../hook/useDate'
 
 const staetState = {
   name:'',
@@ -8,44 +10,51 @@ const staetState = {
 }
 
 const ContactForm = () => {
-
+  const { createContact } = useActions()
+  const { contact } = useDate();
   const [date, setForm] = useState(staetState);
-
-  const sendData = () => {
-    console.log(date);
+  const sendData = (e) => {
+    e.preventDefault()
+    createContact(date);
+    setForm(staetState);
   }
 
   return(
     <>
-      <div className={s.form}>
-        <div className={s.nameForm}>Drop us a line:</div>
-        <div className={s.dateUser}>
-          <div className={s.input}>
-            Your Name
-            <input
-              type="text"
-              onChange={(e)=>{setForm(prev =>({...prev, name:e.target.value}))}}
-            />
+      {contact.fulfilled? <div className={s.ok}>Sending was successful</div> :
+        <form className={s.form}>
+          <div className={s.nameForm}>Drop us a line:</div>
+          <div className={s.dateUser}>
+            <div className={s.input}>
+              Your Name
+              <input
+                type="text"
+                value={date.name}
+                onChange={(e)=>{setForm(prev =>({...prev, name:e.target.value}))}}
+              />
+            </div>
+            <div className={s.input}>
+              Your Email *
+              <input
+                type="text"
+                value={date.email}
+                onChange={(e)=>{setForm(prev =>({...prev, email:e.target.value}))}} 
+              />
+            </div>
           </div>
-          <div className={s.input}>
-            Your Email *
-            <input
-              type="text"
-              onChange={(e)=>{setForm(prev =>({...prev, email:e.target.value}))}} 
-            />
-          </div>
-        </div>
-        Your Message
-        <textarea 
-          onChange={(e)=>{setForm(prev =>({...prev, content:e.target.value}))}}
-        />
-        <div 
-          onClick={()=>{sendData()}}
-          className={s.button}
-        >
-          Send
-        </div>
-      </div>
+          Your Message
+          <textarea 
+            value={date.content}
+            onChange={(e)=>{setForm(prev =>({...prev, content:e.target.value}))}}
+          />
+          <button 
+            onClick={(e)=>{sendData(e)}}
+            className={s.button}
+          >
+            Send
+          </button>
+        </form>
+      }
     </>
   )
 }

@@ -27,7 +27,7 @@ const Account = () => {
               <div className={s.content}>
                 <ul className={s.nav}>
                   
-                  {true?
+                  {user.user.grups == 2?
                     <li><Link to='/adminpanel'>AdminPanel</Link></li>
                   :null}
                   <li><Link to='/account/orders'>Orders</Link></li>

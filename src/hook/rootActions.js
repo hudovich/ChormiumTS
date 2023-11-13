@@ -21,8 +21,10 @@ import * as OrderAPI from "../store/slice/orders/orders.action"
 import * as targetSuccess from "../store/slice/registration/regist.slice"
 import * as comment from "../store/slice/comment/comment.slice"
 import * as apiComment from "../store/slice/comment/comment.action"
+import * as apiContact from "../store/slice/contact/contact.action"
 
 export const rootActions = {
+  ...apiContact,
   ...comment,
   ...apiComment,
   ...OrderAPI,

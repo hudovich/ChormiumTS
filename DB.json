@@ -443,10 +443,10 @@
   "users": [
     {
       "email": "vitaliycall@gmail.com",
-      "password": "$2a$10$jrQBbBdzCaBjn0QfHFAClOBrqFf/D4yhhjgE1k7p1Xnmil84jfGny",
+      "password": "$2a$10$F4wruXaGJcAdrIiieljkr.TpUdB5LveR2Xk/LjH3X032aTgfbyIc.",
       "name": "Vitaliy",
-      "lastName": "Hudo",
-      "grups": 1,
+      "lastName": "Hudovych",
+      "grups": 2,
       "address": {
         "city": "Кировоград",
         "postcode": "25000",
@@ -470,22 +470,7 @@
       "id": 1
     }
   ],
-  "comments": [
-    {
-      "id": "1",
-      "productId": "2",
-      "name": "name",
-      "email": "email",
-      "content": "comment"
-    },
-    {
-      "content": "sdv",
-      "name": "sdv",
-      "email": "dsv",
-      "productId": "2",
-      "id": "2dLVgQY"
-    }
-  ],
+  "comments": [],
   "orders": [
     {
       "orders": [

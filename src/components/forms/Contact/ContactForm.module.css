@@ -4,6 +4,13 @@
   color: #626262;
   padding: 20px;
 }
+.ok{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 28px;
+  height: 100%;
+}
 .nameForm{
   font-size: 23px;
   color: #000;
@@ -36,6 +43,7 @@ textarea{
   justify-content: center;
   align-items: center;
   background-color: #ffc131;
+  border: none;
   color: #000;
   max-width: 80px;
   padding: 8px;
