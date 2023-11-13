@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { createOrder, getOrders } from "./orders.action";
+import { createOrder, getOrders, appDateOrder } from "./orders.action";
 
 const initialState = {
   orders:[],
@@ -24,12 +24,22 @@ export const Orders = createSlice({
       .addCase(createOrder.rejected, (state) => {
         state.error = true;
       })
+
+      .addCase(appDateOrder.pending, (state)=>{
+        state.isLoading = true;
+      })
+      .addCase(appDateOrder.fulfilled, (state)=>{
+        state.isLoading = false;
+      })
+     .addCase(appDateOrder.rejected, (state)=>{
+        state.isLoading = false;
+        state.error = true;
+      })
       
       .addCase(getOrders.pending, (state) => {
         state.isLoading = true;
       })
       .addCase(getOrders.fulfilled, (state, action) => {
-        debugger
         state.isLoading = false;
         if(action.payload.length){
           state.orders = action.payload[0].orders

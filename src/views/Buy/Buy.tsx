@@ -22,15 +22,26 @@ let stateState =
 const Buy = () =>{
 
   const [data, getDate] = useState(stateState);
-  const navigate = useNavigate()
-  const { user, register, wishlist, cart } = useDate()
-  const { getLogin, postUser, targetSuccess, postWish, postCart, createOrder } = useActions()
+  const { user, register, wishlist, cart, orders } = useDate()
+  const { getLogin, 
+          postUser, 
+          targetSuccess, 
+          postWish, 
+          postCart, 
+          createOrder, 
+          getOrders, 
+          appDateOrder
+        } = useActions()
+
+  console.log(orders.orders)
 
   const sendOrder = (e) =>{
     e.preventDefault();
-    console.log(user)
     if(user.user){
-      //ордер
+      appDateOrder({
+        data:[...orders.orders, ...cart.productList], 
+        idUser: JSON.parse(localStorage.idUser)
+      })
     }else{
       postUser({
         email:data.email,
@@ -46,10 +57,28 @@ const Buy = () =>{
         }
       })
       getLogin({email:data.email, password: data.password});
+      if(user.user){
+        appDateOrder({
+          data:[...orders.orders, ...cart.productList], 
+          idUser: JSON.parse(localStorage.idUser)
+        })
+      }
     }
   }
 
   useEffect(()=>{
+    if(JSON.parse(localStorage.idUser)){
+      getOrders(JSON.parse(localStorage.idUser))
+    }
+    if(user.user){
+      getDate(prev => ({...prev, lastName:user.user.lastName}))
+      getDate(prev => ({...prev, name:user.user.name}))
+      getDate(prev => ({...prev, email:user.user.email}))
+      getDate(prev => ({...prev, region:user.user.addres.region}))
+      getDate(prev => ({...prev, streetAddress:user.user.addres.streetAddress}))
+      getDate(prev => ({...prev, city:user.user.addres.city}))
+      getDate(prev => ({...prev, postcode:user.user.addres.postcode}))
+    }
     return () => {
       if(register.success){
         postWish({wish: wishlist.wishlist, idUser: register.user.id})

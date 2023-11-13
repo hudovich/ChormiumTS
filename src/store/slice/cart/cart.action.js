@@ -23,6 +23,7 @@ export const getCart = createAsyncThunk(
 export const appDateCartAPI = createAsyncThunk(
   'appDateCartAPI',
   async(action, thunkApi) => {
+    debugger
     try{
       const response = await fetch(`${API_URL}cart/${action.idCart}`,{
         method:'PATCH',

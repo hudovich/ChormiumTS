@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getLogin, getAutorization } from "./user.action";
+import { getLogin, getAutorization, editUser } from "./user.action";
 
 const initialState = {
   user:'',
@@ -25,7 +25,6 @@ export const User = createSlice({
       state.isLoading = true;
     })
     .addCase(getLogin.fulfilled, (state, action) => {
-      debugger
       if(action.payload == undefined || typeof(action.payload) == 'string'){
         state.error = true;
       }else{
@@ -42,6 +41,19 @@ export const User = createSlice({
       state.isLoading = false;
       state.user = []
     })
+
+    .addCase(editUser.pending, state=>{
+      state.isLoading = true;
+    })
+    .addCase(editUser.fulfilled, (state, actions)=>{
+      state.isLoading = false
+      state.user = actions.payload
+    })
+    .addCase(editUser.rejected, (state)=>{
+      state.isLoading = false;
+      state.error = actions.error
+    })
+
     .addCase(getAutorization.pending, state=>{
       state.isLoading = true;
     })
@@ -53,6 +65,7 @@ export const User = createSlice({
       state.isLoading = false;
       state.user = []
     })
+
   }
 })
 

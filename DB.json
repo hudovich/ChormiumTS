@@ -443,15 +443,15 @@
   "users": [
     {
       "email": "vitaliycall@gmail.com",
-      "password": "$2a$10$4kBKkZ1CaP.oVSFTkF.vNOIiDmDd2EoxzNJ3H6Cbe0IeEFagodZ2.",
+      "password": "$2a$10$jrQBbBdzCaBjn0QfHFAClOBrqFf/D4yhhjgE1k7p1Xnmil84jfGny",
       "name": "Vitaliy",
-      "lastName": "Hudovych",
+      "lastName": "Hudo",
       "grups": 1,
-      "addres": {
+      "address": {
+        "city": "Кировоград",
+        "postcode": "25000",
         "region": "Kirov",
-        "streetAddress": "Glinki",
-        "city": "Krop",
-        "postcode": "25000"
+        "streetAddress": "Kirov"
       },
       "id": 1
     }
@@ -527,6 +527,42 @@
           },
           "quantity": 3,
           "subtotal": 300
+        },
+        {
+          "id": 1,
+          "product": {
+            "id": "10",
+            "name": "пакетный товар1",
+            "images": [],
+            "promotion": "",
+            "category": [
+              "0"
+            ],
+            "description": "описания",
+            "price": "100",
+            "rating": 0,
+            "reviews": []
+          },
+          "quantity": 4,
+          "subtotal": 400
+        },
+        {
+          "id": 1,
+          "product": {
+            "id": "10",
+            "name": "пакетный товар1",
+            "images": [],
+            "promotion": "",
+            "category": [
+              "0"
+            ],
+            "description": "описания",
+            "price": "100",
+            "rating": 0,
+            "reviews": []
+          },
+          "quantity": 2,
+          "subtotal": 200
         }
       ],
       "idUser": 1,

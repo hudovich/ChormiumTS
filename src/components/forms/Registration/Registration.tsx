@@ -10,7 +10,7 @@ const startData = {
   grups: 1,
   email:'',
   password: '',
-  addres:{
+  address:{
     region:'',
     streetAddress:'',
     city:'',

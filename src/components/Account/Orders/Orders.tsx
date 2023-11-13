@@ -10,7 +10,6 @@ const Orders = () => {
   useEffect(()=>{
     getOrders(user.user.id)
   },[])
-  console.log(orders)
   if(orders.orders){
     return(
       <table className={s.list}>
@@ -26,7 +25,7 @@ const Orders = () => {
         {orders.orders.map((e)=>{
           let status = e.status == 1 ? 'Delivered' : 'In processing'
           return(
-            <tr key={e.id}>
+            <tr key={crypto.randomUUID()}>
               <th className={s.name}>{e.product.name || null} </th>
               <th className={s.quantity}>{e.quantity || null} </th>
               <th className={s.subtotal}>{e.subtotal || null} </th>

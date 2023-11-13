@@ -1,22 +1,32 @@
 import s from './AccountEdit.module.css'
 import { useDate } from '../../../hook/useDate'
+import { useActions } from '../../../hook/useActions'
 import { useState } from 'react';
-
-let startData = {
-  name:'',
-  lastName:'',
-  email:'',
-  password:'',
-  newPassword:''
-}
 
 const AccoutnEdit = () => {
   const { user } = useDate();
+
+  let startData = {
+    name:user.user.name,
+    lastName:user.user.lastName,
+    email:user.user.email,
+    password:user.user.password,
+    newPassword:'',
+    address:{
+      city:user.user.address.city,
+      postcode:user.user.address.postcode,
+      region:user.user.address.region,
+      streetAddress:user.user.address.streetAddress,
+    }
+  }
+
+  console.log(user.user)
+  const { editUser } = useActions();
   const [ date, getAccount ] = useState(startData);
   const sendDate = (e) => {
     e.preventDefault();
     getAccount(startData)
-    console.log(date);
+    editUser(date);
   }
   return(
     <>
@@ -49,15 +59,6 @@ const AccoutnEdit = () => {
         </div>
         <div className={s.password}>
           <p>Password change</p>
-          <div className={s.itemPass}>
-            Current password (leave blank to leave unchanged)
-            <input 
-              type="password"
-              placeholder="password" 
-              value={date.password}
-              onChange={e=>getAccount( prev =>({...prev, password: e.target.value}))} 
-            />
-          </div>
           <div className={s.itemPass}>
             New password (leave blank to leave unchanged)
             <input 
