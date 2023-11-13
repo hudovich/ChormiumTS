@@ -470,7 +470,22 @@
       "id": 1
     }
   ],
-  "comments": [],
+  "comments": [
+    {
+      "id": "1",
+      "productId": "2",
+      "name": "name",
+      "email": "email",
+      "content": "comment"
+    },
+    {
+      "content": "sdv",
+      "name": "sdv",
+      "email": "dsv",
+      "productId": "2",
+      "id": "2dLVgQY"
+    }
+  ],
   "orders": [
     {
       "orders": [

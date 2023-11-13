@@ -1,30 +1,34 @@
+import { useParams } from 'react-router-dom';
 import s from './CommentForm.module.css'
 import { useState, FC } from 'react'
-
-const stateState = {
-  comment:'',
-  name:'',
-  email:'',
-}
+import { useActions } from '../../../hook/useActions'
 
 const CommentForm: FC = () => {
-
+const { idProduct } = useParams();
+const { createComment } = useActions();
+const stateState = {
+  content:'',
+  name:'',
+  email:'',
+  productId:idProduct,
+}
 const [data, setComment] = useState(stateState);
-const sendComment = () => {
-  console.log(data);
+const sendComment = (e) => {
+  e.preventDefault()
+  createComment(data);
   setComment(stateState);
 }
 return (
   <>
     <div className={s.addReview}>ADD A REVIEW</div>
-      <div className={s.form}>
+      <form className={s.form}>
         <div className={s.formInput}>
           Your review
           <input 
             type="text" 
             placeholder='Your review'
-            value={data.comment}
-            onChange={(e)=>setComment((prev)=>({...prev, comment:e.target.value}))} 
+            value={data.content}
+            onChange={(e)=>setComment((prev)=>({...prev, content:e.target.value}))} 
           />
         </div>
         <div className={s.formInput}>
@@ -45,8 +49,8 @@ return (
             onChange={(e)=>setComment((prev)=>({...prev, email:e.target.value}))}  
           />
         </div>
-      </div>
-    <div className={s.button} onClick={()=>sendComment()}>submit</div>
+        <button className={s.button} onClick={(e)=>sendComment(e)}>submit</button>
+      </form>
   </>
   )
 };

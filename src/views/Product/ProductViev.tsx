@@ -11,14 +11,15 @@ import Comment from '../../components/Comment/Comment';
 
 const ProductViev: FC = () =>{
   const { idProduct } = useParams();
-  const { products, category } = useDate()
-  const { getCategory, getProduct } = useActions()
+  const { products, category, comment } = useDate()
+  const { getCategory, getProduct, getComment } = useActions()
 
   useEffect(()=>{
     getProduct(idProduct);
     if (products.post !== null){
       getCategory(products.post.category[0]);
     }
+    getComment(idProduct)
   },[idProduct])
 
   if((products.isLoading) || (products.post === null)){return (<>Загрузка</>)}else{
@@ -43,7 +44,7 @@ const ProductViev: FC = () =>{
               <Product item={products.post}/>
             </div>
             <div className={s.reviews}>
-             <Comment item={products.post.reviews}/>
+             <Comment item={comment.comment}/>
             </div>
           </div>
         </div>

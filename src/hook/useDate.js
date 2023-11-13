@@ -17,5 +17,12 @@ export const useDate = () => {
   const wishlist = useSelector(state=> state.wishlist)
   const register = useSelector(state=>state.register)
   const orders = useSelector(state=>state.orders)
-  return {orders, advantages, about, blog, cart, category, gallery, pages, products, slider, sliderHeader, blogPost, search, user, wishlist, register}
+  const comment = useSelector(state=>state.comment)
+  return {
+          comment, orders, advantages, 
+          about, blog, cart, category, 
+          gallery, pages, products, 
+          slider, sliderHeader, blogPost, 
+          search, user, wishlist, register
+        }
 }
