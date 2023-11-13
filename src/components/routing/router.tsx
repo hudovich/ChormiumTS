@@ -17,6 +17,7 @@ import AccoutnEdit from '../Account/AccountEdit/AccountEdit';
 import AccountAddress from '../Account/AccountAddress/AccontAddress';
 import Wishlist from '../../views/Wishlist/Wishlidt';
 import Buy from '../../views/Buy/Buy';
+import AdminPanel from '../../views/AdminPanel/AdminPanel';
 
 const router = createBrowserRouter([
   {
@@ -99,6 +100,13 @@ const router = createBrowserRouter([
     path:'/contact',
     element: <Contact />
   },
+  {
+    path: '/adminpanel',
+    element:<AdminPanel />,
+    children:[
+      
+    ]
+  }
 ]);
 
 
