@@ -1,25 +1,33 @@
 import Logo from "../../components/logo/Logo"
-import image from "../../assets/logo.png"
+import image from "../../assets/logo_footer.png"
+import s from "./AdminPanel.module.css"
+import { Link, Outlet } from "react-router-dom"
 
 const AdminPanel = () => {
   return(
-    <>
-      <header>
+    <div className={s.adminpanel}>
+      <div className={s.header}>
         <Logo image={image}/>
-        <a href="/">Вернутся на сайт</a>
-      </header>
-      <div className="content">
-        <nav>
+        <Link className = {s.linkHeader} to="/">Return to home page</Link>
+      </div>
+      <div className={s.content}>
+        <nav className={s.menu}>
           <ul>
-            <li>Пункт меню</li>
-            <li>Пункт меню</li>
-            <li>Пункт меню</li>
+            <li className = {s.link}><Link to="aorders">Orders</Link></li>
+            <li className = {s.link}><Link to="acontact">Contact</Link></li>
+            <li className = {s.link}><Link to="ablog">Blog</Link></li>
+            <li className = {s.link}><Link to="aabout">About</Link></li>
+            <li className = {s.link}><Link to="aslider">Slider</Link></li>
+            <li className = {s.link}><Link to="aproducts">Products</Link></li>
+            <li className = {s.link}><Link to="acategory">Category</Link></li>
+            <li className = {s.link}><Link to="ausers">Users</Link></li>
+            <li className = {s.link}><Link to="asettings">Settings</Link></li>
           </ul>
         </nav>
-        <div>Контент</div>
+        <div className={s.box}><Outlet /></div>
       </div>
-      <footer>Все права защищены</footer>
-    </>
+      <footer className={s.footer}>All rights reserved 2023 &#169;</footer>
+    </div>
   )
 }
 

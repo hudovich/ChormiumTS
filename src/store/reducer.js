@@ -17,9 +17,11 @@ import { reducer as Register } from "./slice/registration/regist.slice"
 import { reducer as Orders } from "./slice/orders/orders.slice";
 import { reducer as comment } from "./slice/comment/comment.slice";
 import { reducer as contact } from "./slice/contact/contact.slice"
+import { reducer as Adminka } from "./slice/Adminka/Adminka.slice"
 
 
 export const reducers = combineReducers({
+  adminka: Adminka,
   user: user,
   advantages: advantagesSlice,
   sliderHeader: sliderHeader,

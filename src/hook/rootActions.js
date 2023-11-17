@@ -22,8 +22,10 @@ import * as targetSuccess from "../store/slice/registration/regist.slice"
 import * as comment from "../store/slice/comment/comment.slice"
 import * as apiComment from "../store/slice/comment/comment.action"
 import * as apiContact from "../store/slice/contact/contact.action"
+import * as apiAdminka from "../store/slice/Adminka/Adminka.action"
 
 export const rootActions = {
+  ...apiAdminka,
   ...apiContact,
   ...comment,
   ...apiComment,

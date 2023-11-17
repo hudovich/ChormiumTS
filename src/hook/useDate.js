@@ -19,12 +19,13 @@ export const useDate = () => {
   const orders = useSelector(state=>state.orders)
   const comment = useSelector(state=>state.comment)
   const contact = useSelector(state=>state.contact)
+  const adminka = useSelector(state=>state.adminka)
   return {
           comment, orders, advantages, 
           about, blog, cart, category, 
           gallery, pages, products, 
           slider, sliderHeader, blogPost, 
           search, user, wishlist, register,
-          contact
+          contact, adminka
         }
 }

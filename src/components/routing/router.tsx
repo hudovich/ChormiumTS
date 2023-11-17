@@ -18,6 +18,15 @@ import AccountAddress from '../Account/AccountAddress/AccontAddress';
 import Wishlist from '../../views/Wishlist/Wishlidt';
 import Buy from '../../views/Buy/Buy';
 import AdminPanel from '../../views/AdminPanel/AdminPanel';
+import AOrders from '../AdminPanel/AOrders/AOrders'
+import AContact from '../AdminPanel/AContact/AContact'
+import ABlog from '../AdminPanel/ABlog/ABlog'
+import AAbout from '../AdminPanel/AAbout/AAbout'
+import ASlider from '../AdminPanel/ASlider/ASlider'
+import AProducts from '../AdminPanel/AProducts/AProducts'
+import ACategory from '../AdminPanel/ACategory/ACategory'
+import AUsers from '../AdminPanel/AUsers/AUsers'
+import ASettings from '../AdminPanel/ASettings/ASettings'
 
 const router = createBrowserRouter([
   {
@@ -104,7 +113,42 @@ const router = createBrowserRouter([
     path: '/adminpanel',
     element:<AdminPanel />,
     children:[
-      
+      {
+        path: '/adminpanel/aorders',
+        element:<AOrders />,
+      },
+      {
+        path: '/adminpanel/ablog',
+        element:<ABlog />,
+      },
+      {
+        path: '/adminpanel/aabout',
+        element:<AAbout />,
+      },
+      {
+        path: '/adminpanel/aslider',
+        element:<ASlider />,
+      },
+      {
+        path: '/adminpanel/aproducts',
+        element:<AProducts />,
+      },
+      {
+        path: '/adminpanel/acategory',
+        element:<ACategory />,
+      },
+      {
+        path: '/adminpanel/ausers',
+        element:<AUsers />,
+      },
+      {
+        path: '/adminpanel/asettings',
+        element:<ASettings />,
+      },
+      {
+        path: '/adminpanel/acontact',
+        element:<AContact />,
+      },
     ]
   }
 ]);
