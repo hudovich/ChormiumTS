@@ -10,12 +10,13 @@ const AProducts = () => {
     getAdminkaDate({url:'product'})
   },[])
   console.log(adminka)
-
-  return(
-    <>
-      Продукты
-    </>
-  )
+  if(adminka.data || adminka.data.length){
+    return(
+      <>
+        Продукты
+      </>
+    )
+  }else{null}
 }
 
 export default AProducts

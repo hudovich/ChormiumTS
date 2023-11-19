@@ -23,7 +23,6 @@ export const getOrders = createAsyncThunk(
 export const appDateOrder = createAsyncThunk(
   'appDateOrder',
   async(action, thunkApi)=>{
-    debugger
     try{
       const response = await fetch(`${API_URL}orders/${action.idUser}`,{
         method: 'PATCH',

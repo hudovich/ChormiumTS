@@ -21,7 +21,7 @@ const startData = {
 const Registration: FC = () => {
   const { register, wishlist, cart } = useDate();
   console.log(cart)
-  const { postUser, postWish, postCart, createOrder } = useActions()
+  const { postUser, postWish, postCart} = useActions()
   const [data, getUser] = useState(startData);
   const sendUser = (e) => {
     e.preventDefault();
@@ -34,7 +34,6 @@ const Registration: FC = () => {
     if(register.success){
       postWish({wish: wishlist.wishlist, idUser: register.user.id})
       postCart({productList: cart.productList, idUser: register.user.id})
-      createOrder({orders: cart.productList, idUser: register.user.id})
     }
     if(register.success) navigate("/account");
   },[register.success])

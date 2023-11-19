@@ -30,7 +30,6 @@ const Buy = () =>{
           postCart, 
           createOrder, 
           getOrders, 
-          appDateOrder
         } = useActions()
 
   console.log(orders.orders)
@@ -38,9 +37,10 @@ const Buy = () =>{
   const sendOrder = (e) =>{
     e.preventDefault();
     if(user.user){
-      appDateOrder({
-        data:[...orders.orders, ...cart.productList], 
-        idUser: JSON.parse(localStorage.idUser)
+      createOrder({
+        orders: cart.productList, 
+        idUser: JSON.parse(localStorage.idUser),
+        status: false,
       })
     }else{
       postUser({
@@ -58,16 +58,16 @@ const Buy = () =>{
       })
       getLogin({email:data.email, password: data.password});
       if(user.user){
-        appDateOrder({
-          data:[...orders.orders, ...cart.productList], 
-          idUser: JSON.parse(localStorage.idUser)
+        createOrder({
+          orders: cart.productList, 
+          idUser: JSON.parse(localStorage.idUser),
+          status: false,
         })
       }
     }
   }
-
   useEffect(()=>{
-    if(JSON.parse(localStorage.idUser)){
+    if(localStorage.idUser){
       getOrders(JSON.parse(localStorage.idUser))
     }
     if(user.user){
@@ -83,7 +83,7 @@ const Buy = () =>{
       if(register.success){
         postWish({wish: wishlist.wishlist, idUser: register.user.id})
         postCart({productList: cart.productList, idUser: register.user.id})
-        createOrder({orders: cart.productList, idUser: register.user.id})
+        createOrder({orders: cart.productList, status:false, idUser: register.user.id})
         targetSuccess();
       }
     }

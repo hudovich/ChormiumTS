@@ -2,8 +2,17 @@ import Logo from "../../components/logo/Logo"
 import image from "../../assets/logo_footer.png"
 import s from "./AdminPanel.module.css"
 import { Link, Outlet } from "react-router-dom"
+import { useDate } from '../../hook/useDate'
+import { useActions } from '../../hook/useActions'
+import { useEffect } from 'react'
 
 const AdminPanel = () => {
+  const { getAutorization } = useActions();
+  const { user } = useDate();
+  useEffect(()=>{
+    getAutorization()
+  },[])
+  if(user.user.grups == '2'){
   return(
     <div className={s.adminpanel}>
       <div className={s.header}>
@@ -29,6 +38,7 @@ const AdminPanel = () => {
       <footer className={s.footer}>All rights reserved 2023 &#169;</footer>
     </div>
   )
+  }else{return(<h2>No access rights</h2>)}
 }
 
 export default AdminPanel

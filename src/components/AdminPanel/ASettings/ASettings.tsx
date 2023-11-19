@@ -9,12 +9,13 @@ const ASettings = () => {
   useEffect(()=>{
     getAdminkaDate({url:'settings'})
   },[])
-
-  return(
-    <>
-      Настройки
-    </>
-  )
+  if(adminka.data || adminka.data.length){
+    return(
+      <>
+        Настройки
+      </>
+    )
+  }else{null}
 }
 
 export default ASettings

@@ -10,12 +10,13 @@ const AUsers = () => {
     getAdminkaDate({url:'users'})
   },[])
   console.log(adminka)
-
-  return(
-    <>
-      Пользыватели
-    </>
-  )
+  if(adminka.data || adminka.data.length){
+    return(
+      <>
+        Пользыватели
+      </>
+    )
+  }
 }
 
 export default AUsers

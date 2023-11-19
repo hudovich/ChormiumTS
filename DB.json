@@ -99,14 +99,16 @@
       "description": ""
     }
   ],
-  "settings": {
-    "name": "Chromium",
-    "phone": "0 (800) 423-754",
-    "addres": "Chromium Co , 25 Silicon Road, London D04 89GR",
-    "logo": "",
-    "timeJob": "Monday – Friday 8:00 to 19:00",
-    "eMail": "test@chromium.com"
-  },
+  "settings": [
+    {
+      "name": "Chromium",
+      "phone": "0 (800) 423-754",
+      "addres": "Chromium Co , 25 Silicon Road, London D04 89GR",
+      "logo": "",
+      "timeJob": "Monday – Friday 8:00 to 19:00",
+      "eMail": "test@chromium.com"
+    }
+  ],
   "listPages": [
     {
       "id": "1",
@@ -458,24 +460,27 @@
   ],
   "cart": [
     {
-      "productList": [],
-      "idUser": 1,
-      "id": 1
-    }
-  ],
-  "wish": [
-    {
-      "wish": [],
-      "idUser": 1,
-      "id": 1
-    }
-  ],
-  "comments": [],
-  "orders": [
-    {
-      "orders": [
+      "productList": [
         {
           "id": 1,
+          "product": {
+            "id": "9",
+            "name": "Названия9",
+            "images": [],
+            "promotion": "",
+            "category": [
+              "1"
+            ],
+            "description": "описания",
+            "price": "100",
+            "rating": 0,
+            "reviews": []
+          },
+          "quantity": 2,
+          "subtotal": 200
+        },
+        {
+          "id": 2,
           "product": {
             "id": "2",
             "name": "Названия2",
@@ -502,20 +507,31 @@
               }
             ]
           },
-          "quantity": 2,
-          "subtotal": 200
-        },
+          "quantity": 3,
+          "subtotal": 300
+        }
+      ],
+      "idUser": 1,
+      "id": 1
+    }
+  ],
+  "wish": [
+    {
+      "wish": [],
+      "idUser": 1,
+      "id": 1
+    }
+  ],
+  "comments": [],
+  "orders": [
+    {
+      "orders": [
         {
-          "id": 2,
+          "id": 1,
           "product": {
-            "id": "8",
-            "name": "Названия8",
-            "images": [
-              {
-                "id": "1",
-                "url": "https://cdn.baz-on.ru/pub/c1220/productphoto/0000/60/0000_60_845.jpg"
-              }
-            ],
+            "id": "9",
+            "name": "Названия9",
+            "images": [],
             "promotion": "",
             "category": [
               "1"
@@ -525,47 +541,43 @@
             "rating": 0,
             "reviews": []
           },
-          "quantity": 3,
-          "subtotal": 300
-        },
-        {
-          "id": 1,
-          "product": {
-            "id": "10",
-            "name": "пакетный товар1",
-            "images": [],
-            "promotion": "",
-            "category": [
-              "0"
-            ],
-            "description": "описания",
-            "price": "100",
-            "rating": 0,
-            "reviews": []
-          },
-          "quantity": 4,
-          "subtotal": 400
-        },
-        {
-          "id": 1,
-          "product": {
-            "id": "10",
-            "name": "пакетный товар1",
-            "images": [],
-            "promotion": "",
-            "category": [
-              "0"
-            ],
-            "description": "описания",
-            "price": "100",
-            "rating": 0,
-            "reviews": []
-          },
           "quantity": 2,
           "subtotal": 200
+        },
+        {
+          "id": 2,
+          "product": {
+            "id": "2",
+            "name": "Названия2",
+            "images": [
+              {
+                "id": "1",
+                "url": "https://www.oponeo.pl/Temp/imperial-ecosport-2-11575-f-f-l700-sk4.webp"
+              }
+            ],
+            "promotion": "sale",
+            "category": [
+              "1"
+            ],
+            "description": "описания",
+            "price": "100",
+            "rating": 0,
+            "reviews": [
+              {
+                "id": "0",
+                "text": "Comment",
+                "autgor": "author",
+                "photo": "",
+                "eMail": "e-mail"
+              }
+            ]
+          },
+          "quantity": 3,
+          "subtotal": 300
         }
       ],
       "idUser": 1,
+      "status": false,
       "id": 1
     }
   ],
