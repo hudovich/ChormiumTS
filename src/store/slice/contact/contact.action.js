@@ -20,3 +20,22 @@ export const createContact = createAsyncThunk(
     }
   }
 )
+
+export const dellContact = createAsyncThunk(
+  'dellContact',
+  async(action, thunkApi)=>{
+    try{
+      const responce = await fetch(`${API_URL}contact/${action.id}`,{
+        method:"DELETE",
+        headers:{
+          "Content-Type":"application/json"
+        }
+      })
+      let json = await responce.json();
+      return json
+    }
+    catch(error){
+      thunkApi.rejectWithValue.error
+    }
+  }
+)

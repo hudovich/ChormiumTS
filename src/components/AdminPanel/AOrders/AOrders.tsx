@@ -4,26 +4,29 @@ import { useDate } from '../../../hook/useDate'
 import s from './AOrders.module.css'
 
 const AOrders = () => {
-  const { getAdminkaDate } = useActions();
+  const { getAdminkaDate, appDateOrder } = useActions();
   const { adminka } = useDate();
   useEffect(()=>{
     getAdminkaDate({url:'orders'})
   },[])
-  console.log(adminka)
+  const select = (e) => {
+    appDateOrder({id:e.id, data:e.data})
+    getAdminkaDate({url:'orders'})
+  }
+
   if( adminka.data || adminka.data.length ){
     return(
       <>
       <div className={s.top}>
-        <div className={s.name}>Blog</div>
-        <button>Add</button>
+        <div className={s.name}>Orders</div>
       </div>
       <table className={s.table}>
         <thead>
           <tr>
             <td>ID</td>
             <td>ID USER</td>
+            <td style={{width:'60%'}}>ORDERS</td>
             <td>STATUS</td>
-            <td>EDIT</td>
           </tr>
         </thead>
         <tbody>
@@ -33,9 +36,37 @@ const AOrders = () => {
                 <td>{e.id}</td>
                 <td>{e.idUser}</td>
                 <td>
-                  {e.status?'Sent':'In processing'}
+                  {e.orders.map((q)=>{
+                    return(
+                      <div key={q.id} className={s.box}>
+                        <div className={s.proporties}>
+                          <ul>
+                            <li>ID</li>
+                            <li>Name Product:</li>
+                            <li>Quantity:</li>
+                          </ul>
+                        </div>
+                        <div className={s.items}>
+                          <ul>
+                            <li>{q.id}</li>
+                            <li>{q.product.name}</li>
+                            <li>{q.quantity}</li>
+                          </ul>
+                        </div>
+                      </div>
+                    );
+                  })
+                  }
                 </td>
-                <td>Edit</td>
+                <td>
+                  <div>
+                    {e.status?
+                      <button onClick={()=>{select({id:e.id, data:false})}}>Sent</button>
+                    : 
+                      <button onClick={()=>{select({id:e.id, data:true})}}>In processing</button>
+                    }
+                  </div>
+                </td>
               </tr>
             )
           })}

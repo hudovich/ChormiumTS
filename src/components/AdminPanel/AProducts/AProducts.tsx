@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useActions } from '../../../hook/useActions'
 import { useDate } from '../../../hook/useDate'
+import s from './AProducts.module.css'
 
 const AProducts = () => {
   const { getAdminkaDate } = useActions();
@@ -10,13 +11,44 @@ const AProducts = () => {
     getAdminkaDate({url:'product'})
   },[])
   console.log(adminka)
-  if(adminka.data || adminka.data.length){
+  if( adminka.data || adminka.data.length ){
     return(
       <>
-        Продукты
+      <div className={s.top}>
+        <div className={s.name}>Products</div>
+      </div>
+      <table className={s.table}>
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>NAME</td>
+            <td>DESCRIPTION</td>
+            <td>IMAGES</td>
+            <td>EDIT</td>
+          </tr>
+        </thead>
+        <tbody>
+          {adminka.data.map((e)=>{
+            return(
+              <tr key={e.id}>
+                <td>{e.id}</td>
+                <td>{e.name}</td>
+                <td>{e.description}</td>
+                <td>
+                  {e.images.length?
+                    <img className={s.images} src={e.images[0].url} alt={e.name}/>
+                  : false
+                  }
+                </td>
+                <td>Edit</td>
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
       </>
-    )
-  }else{null}
+    )}
+    else{null}
 }
 
 export default AProducts

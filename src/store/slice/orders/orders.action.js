@@ -24,10 +24,10 @@ export const appDateOrder = createAsyncThunk(
   'appDateOrder',
   async(action, thunkApi)=>{
     try{
-      const response = await fetch(`${API_URL}orders/${action.idUser}`,{
+      const response = await fetch(`${API_URL}orders/${action.id}`,{
         method: 'PATCH',
         body: JSON.stringify({
-          orders:action.data
+          status:action.data
         }),
         headers: {
           "Content-Type": "application/json"

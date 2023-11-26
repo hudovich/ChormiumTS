@@ -4,19 +4,22 @@ import { useDate } from '../../../hook/useDate'
 import s from './AContact.module.css'
 
 const AContact = () =>{
-  const { getAdminkaDate } = useActions();
+  const { getAdminkaDate, dellContact } = useActions();
   const { adminka } = useDate();
   console.log(adminka)
   useEffect(()=>{
     getAdminkaDate({url:'contact'})
   },[])
+  const dell = (e) => {
+    dellContact(e)
+    getAdminkaDate({url:'contact'})
+  }
   console.log(adminka)
   if(adminka.data || adminka.data.length){
     return(
       <>
       <div className={s.top}>
         <div className={s.name}>Contacts</div>
-        <button>Add</button>
       </div>
       <table className={s.table}>
         <thead>
@@ -24,7 +27,6 @@ const AContact = () =>{
             <td>ID</td>
             <td>NAME</td>
             <td>DESCRIPTION</td>
-            <td>IMAGES</td>
             <td>NAVIGATION</td>
           </tr>
         </thead>
@@ -34,15 +36,9 @@ const AContact = () =>{
               <tr key={e.id}>
                 <td>{e.id}</td>
                 <td>{e.name}</td>
-                <td>{e.description}</td>
+                <td>{e.content}</td>
                 <td>
-                  {e.images?
-                    <img src={e.images} alt={e.name}/>
-                  :null}
-                </td>
-                <td>
-                  <button>Edit</button>
-                  <button>Delete</button>
+                  <button onClick={()=>{dell({id:e.id})}}>Delete</button>
                 </td>
               </tr>
             )

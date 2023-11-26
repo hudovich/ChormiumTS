@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { createContact } from './contact.action'
+import { createContact, dellContact } from './contact.action'
 
 const initialState = {
   fulfilled: false,
@@ -21,6 +21,18 @@ export const Contact = createSlice({
         state.fulfilled = true;
       })
       .addCase(createContact.rejected, state =>{
+        state.isLoading = false;
+        state.error = true;
+      })
+
+      .addCase(dellContact.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(dellContact.fulfilled, (state, action) =>{
+        state.isLoading = false;
+        state.fulfilled = true;
+      })
+      .addCase(dellContact.rejected, state =>{
         state.isLoading = false;
         state.error = true;
       })

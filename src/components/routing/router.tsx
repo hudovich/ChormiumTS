@@ -114,39 +114,39 @@ const router = createBrowserRouter([
     element:<AdminPanel />,
     children:[
       {
-        path: '/adminpanel/aorders',
+        path: 'aorders',
         element:<AOrders />,
       },
       {
-        path: '/adminpanel/ablog',
+        path: 'ablog',
         element:<ABlog />,
       },
       {
-        path: '/adminpanel/aabout',
+        path: 'aabout',
         element:<AAbout />,
       },
       {
-        path: '/adminpanel/aslider',
+        path: 'aslider',
         element:<ASlider />,
       },
       {
-        path: '/adminpanel/aproducts',
+        path: 'aproducts',
         element:<AProducts />,
       },
       {
-        path: '/adminpanel/acategory',
+        path: 'acategory',
         element:<ACategory />,
       },
       {
-        path: '/adminpanel/ausers',
+        path: 'ausers',
         element:<AUsers />,
       },
       {
-        path: '/adminpanel/asettings',
+        path: 'asettings',
         element:<ASettings />,
       },
       {
-        path: '/adminpanel/acontact',
+        path: 'acontact',
         element:<AContact />,
       },
     ]
