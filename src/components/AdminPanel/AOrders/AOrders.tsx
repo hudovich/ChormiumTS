@@ -36,7 +36,7 @@ const AOrders = () => {
                 <td>{e.id}</td>
                 <td>{e.idUser}</td>
                 <td>
-                  {e.orders.map((q)=>{
+                  {e.orders && e.orders.map((q)=>{
                     return(
                       <div key={q.id} className={s.box}>
                         <div className={s.proporties}>

@@ -19,3 +19,25 @@ export const getAdminkaDate = createAsyncThunk(
     }
   }
 )
+
+export const getEditAdminkaPost = createAsyncThunk(
+  'getAdminkaPost',
+  async(actions, thunkApi)=>{
+    try{
+      const response = await fetch (`${API_URL}${actions.url}/${actions.id}`,{
+        method: "PATCH",
+        body: JSON.stringify(
+          actions.date
+        ),
+        headers: {
+          "Content-Type":"application/json" 
+        }
+      });
+      const json = await response.json()
+      return(json)
+    }
+    catch(error){
+      thunkApi.rejectWithValue.error
+    }
+  }
+)

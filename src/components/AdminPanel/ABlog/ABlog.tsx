@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useActions } from '../../../hook/useActions'
 import { useDate } from '../../../hook/useDate'
 import s from './ABlog.module.css'
+import { Link } from 'react-router-dom';
 
 const ABlog = () => {
   const { getAdminkaDate } = useActions();
@@ -15,7 +16,7 @@ const ABlog = () => {
       <>
       <div className={s.top}>
         <div className={s.name}>Blog</div>
-        <button>Add</button>
+        <Link to='add'>Add</Link>
       </div>
       <table className={s.table}>
         <thead>
@@ -40,7 +41,7 @@ const ABlog = () => {
                   :null}
                 </td>
                 <td>
-                  <button>Edit</button>
+                  <Link to={e.id}>Edit</Link>
                   <button>Delete</button>
                 </td>
               </tr>

@@ -2,15 +2,14 @@ import { useEffect } from 'react';
 import { useActions } from '../../../hook/useActions'
 import { useDate } from '../../../hook/useDate'
 import s from './AProducts.module.css'
+import { Link } from 'react-router-dom';
 
 const AProducts = () => {
   const { getAdminkaDate } = useActions();
   const { adminka } = useDate();
-  console.log(adminka)
   useEffect(()=>{
     getAdminkaDate({url:'product'})
   },[])
-  console.log(adminka)
   if( adminka.data || adminka.data.length ){
     return(
       <>
@@ -40,7 +39,7 @@ const AProducts = () => {
                   : false
                   }
                 </td>
-                <td>Edit</td>
+                <td><Link to={e.id}>Edit</Link></td>
               </tr>
             )
           })}

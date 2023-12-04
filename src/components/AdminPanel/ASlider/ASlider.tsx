@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useActions } from '../../../hook/useActions'
 import { useDate } from '../../../hook/useDate'
 import s from './ASlider.module.css'
+import { Link } from 'react-router-dom';
 
 const ASlider = () => {
   const { getAdminkaDate } = useActions();
@@ -42,7 +43,7 @@ const ASlider = () => {
                   :null}
                 </td>
                 <td>
-                  <button>Edit</button>
+                  <Link to={e.id}>Edit</Link>
                   <button>Delete</button>
                 </td>
               </tr>

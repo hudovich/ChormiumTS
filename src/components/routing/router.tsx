@@ -27,6 +27,7 @@ import AProducts from '../AdminPanel/AProducts/AProducts'
 import ACategory from '../AdminPanel/ACategory/ACategory'
 import AUsers from '../AdminPanel/AUsers/AUsers'
 import ASettings from '../AdminPanel/ASettings/ASettings'
+import Edit from '../AdminPanel/AEdit/Edit';
 
 const router = createBrowserRouter([
   {
@@ -122,20 +123,40 @@ const router = createBrowserRouter([
         element:<ABlog />,
       },
       {
+        path: 'ablog/:id',
+        element:<Edit get='blog'/>
+      },
+      {
         path: 'aabout',
         element:<AAbout />,
+      },
+      {
+        path: 'aabout/:id',
+        element:<Edit get='about'/>
       },
       {
         path: 'aslider',
         element:<ASlider />,
       },
       {
+        path: 'aslider/:id',
+        element:<Edit get='slider'/>
+      },
+      {
         path: 'aproducts',
         element:<AProducts />,
       },
       {
+        path: 'aproducts/:id',
+        element:<Edit get='product'/>
+      },
+      {
         path: 'acategory',
         element:<ACategory />,
+      },
+      {
+        path: 'acategory/:id',
+        element:<Edit get='category'/>
       },
       {
         path: 'ausers',
