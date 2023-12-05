@@ -7,6 +7,7 @@ const AEditForm = (props) => {
   const [data, setData] = useState(props);
   const { getAdminkaDate, getEditAdminkaPost, createPostAdminka, dellPostAdminka } = useActions()
   const navigate = useNavigate()
+
   const dell = (e) => {
     e.preventDefault()
     dellPostAdminka({
@@ -15,6 +16,7 @@ const AEditForm = (props) => {
     })
     navigate(`/adminpanel/a${props.get}`)
   }
+
   const editData = (e)=> {
     e.preventDefault()
     if(props.id){
@@ -27,7 +29,6 @@ const AEditForm = (props) => {
       )
       getAdminkaDate({url:props.get})
      }else{
-       console.log('Новая запись')
        createPostAdminka(
         {
           url:props.get,
@@ -37,6 +38,7 @@ const AEditForm = (props) => {
        getAdminkaDate({url:props.get})
      }
   }
+
   return(
     <form>
       <input value={data.name} 
