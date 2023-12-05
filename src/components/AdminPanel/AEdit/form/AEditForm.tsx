@@ -1,10 +1,20 @@
 import { useState } from "react";
 import { useActions } from '../../../../hook/useActions'
+import { useNavigate } from "react-router-dom";
 
 const AEditForm = (props) => {
   let r = Object.prototype.toString
   const [data, setData] = useState(props);
-  const { getAdminkaDate, getEditAdminkaPost, createPostAdminka } = useActions()
+  const { getAdminkaDate, getEditAdminkaPost, createPostAdminka, dellPostAdminka } = useActions()
+  const navigate = useNavigate()
+  const dell = (e) => {
+    e.preventDefault()
+    dellPostAdminka({
+      id:props.id,
+      url:props.get,
+    })
+    navigate(`/adminpanel/a${props.get}`)
+  }
   const editData = (e)=> {
     e.preventDefault()
     if(props.id){
@@ -106,7 +116,7 @@ const AEditForm = (props) => {
         />}
     
       <button onClick={editData}>Save</button>
-      <button>Delete</button>
+      <button onClick={dell}>Delete</button>
     </form>
   )
 }

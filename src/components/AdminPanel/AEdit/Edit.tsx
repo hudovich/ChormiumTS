@@ -8,7 +8,7 @@ import AEditForm from "./form/AEditForm"
 const Edit = ({get}) =>{
   const { id }  = useParams();
   const { adminka } = useDate()
-  const { getAdminkaDate, getEditAdminkaPost } = useActions();
+  const { getAdminkaDate } = useActions();
   useEffect(()=>{
     if (!(id == "add")){
       getAdminkaDate({url:get})

@@ -5,7 +5,7 @@ import s from './ABlog.module.css'
 import { Link } from 'react-router-dom';
 
 const ABlog = () => {
-  const { getAdminkaDate } = useActions();
+  const { getAdminkaDate} = useActions();
   const { adminka } = useDate();
   console.log(adminka)
   useEffect(()=>{
@@ -42,7 +42,6 @@ const ABlog = () => {
                 </td>
                 <td>
                   <Link to={e.id}>Edit</Link>
-                  <button>Delete</button>
                 </td>
               </tr>
             )

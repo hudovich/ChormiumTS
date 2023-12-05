@@ -401,14 +401,6 @@
       "sub": "Короткое описание",
       "description": "Описания1",
       "get": "blog"
-    },
-    {
-      "get": "blog",
-      "name": "ghng",
-      "description": "ghndf",
-      "sub": "dfhng",
-      "images": "ddfn",
-      "id": "R2GKZ9j"
     }
   ],
   "about": [

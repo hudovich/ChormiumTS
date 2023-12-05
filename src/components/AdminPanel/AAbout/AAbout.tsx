@@ -41,7 +41,6 @@ const AAbout = () => {
               </td>
               <td>
                 <Link to={e.id}>Edit</Link>
-                <button>Delete</button>
               </td>
             </tr>
           )

@@ -63,3 +63,24 @@ export const createPostAdminka = createAsyncThunk(
     }
   }
 )
+
+export const dellPostAdminka = createAsyncThunk(
+  'dellPostAdminka',
+  async (action, thunkApi) => {
+    try{
+      const response = await fetch(`${API_URL}${action.url}/${action.id}`,
+        {
+          method:'DELETE',
+          headers:{
+            "Content-Type": "application/json"
+          }
+        }
+      )
+      let json = await response.json()
+      return json
+    }
+    catch(error){
+      thunkApi.rejectWithValue.error
+    }
+  }
+)

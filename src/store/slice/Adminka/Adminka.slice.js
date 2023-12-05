@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { createPostAdminka, getAdminkaDate, getEditAdminkaPost } from "./Adminka.action";
+import { createPostAdminka, dellPostAdminka, getAdminkaDate, getEditAdminkaPost } from "./Adminka.action";
 
 const initialState = {
   data: '',
@@ -49,6 +49,18 @@ export const Adminka = createSlice({
       .addCase(createPostAdminka.rejected, state => {
         state.isLoading = false;
         console.log('error create post')
+      })
+
+      .addCase(dellPostAdminka.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(dellPostAdminka.fulfilled, state=>{
+        state.isLoading = false;
+        console.log("delete ok")
+      })
+      .addCase(dellPostAdminka.rejected, state=>{
+        state.isLoading(false);
+        console.log("delete error")
       })
 })
 
