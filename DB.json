@@ -395,9 +395,10 @@
       "id": "2",
       "name": "Стартавой блог",
       "author": "Автор",
-      "images": "",
+      "images": "https://assets.avtocod.ru/storage/images/articles-2022/otnyud-ne-bmw-top-10-samykh-dorogikh-mashin-mira-v-2022-godu/otnyud-ne-bmw-top-10-samykh-dorogikh-mashin-mira-v-2022-godu-3-min.jpg",
       "sub": "Короткое описание",
-      "description": "Описания1"
+      "description": "Описания1",
+      "get": "blog"
     }
   ],
   "about": [
@@ -405,7 +406,8 @@
       "id": "1",
       "name": "THE CHROMIUM STORY",
       "description": "The more we drive the car the better they seem to operate. No noise, just stopping power! Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur erit qui in ea voluptate verit qui in ea voluptate vele.Phasellus rhoncus a dui quis elemen turn. In non feugiat massa.",
-      "images": "https://investprofit.info/wp-content/uploads/2020/07/graf_kotir.png"
+      "images": "https://investprofit.info/wp-content/uploads/2020/07/graf_kotir.png",
+      "get": "about"
     },
     {
       "id": "2",

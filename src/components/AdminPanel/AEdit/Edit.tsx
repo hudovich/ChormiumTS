@@ -9,7 +9,6 @@ const Edit = ({get}) =>{
   const { id }  = useParams();
   const { adminka } = useDate()
   const { getAdminkaDate, getEditAdminkaPost } = useActions();
-  console.log(get);
   useEffect(()=>{
     if (!(id == "add")){
       getAdminkaDate({url:get})
@@ -31,11 +30,15 @@ const Edit = ({get}) =>{
           break;
       }
     }else{ 
-      post = adminka.data.find(e=>e.id==id);
+      adminka.data.length > 0 ?
+        post = adminka.data.find(e=>e.id==id)
+      : 
+        post = adminka.data
     }
     return(
       <>
         <AEditForm 
+          get = {get}
           id={post.id}
           name={post.name}
           description={post.description}

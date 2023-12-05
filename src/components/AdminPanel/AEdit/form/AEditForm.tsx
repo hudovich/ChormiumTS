@@ -1,12 +1,26 @@
 import { useState } from "react";
+import { useActions } from '../../../../hook/useActions'
 
 const AEditForm = (props) => {
   let r = Object.prototype.toString
   const [data, setData] = useState(props);
+  const { getAdminkaDate, getEditAdminkaPost } = useActions()
   const editData = (e)=> {
     e.preventDefault()
-    console.log(JSON.parse(JSON.stringify(data)));
-    setData(props);
+    if(props.id){
+      getEditAdminkaPost(
+        {
+          url:props.get,
+          id:props.id,
+          date:JSON.parse(JSON.stringify(data))
+        }
+      )
+      getAdminkaDate({url:props.get})
+     }else{
+       console.log('Новая запись')
+       console.log(JSON.parse(JSON.stringify(data)));
+       getAdminkaDate({url:props.get})
+     }
   }
   return(
     <form>
