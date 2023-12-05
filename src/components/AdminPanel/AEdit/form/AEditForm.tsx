@@ -4,7 +4,7 @@ import { useActions } from '../../../../hook/useActions'
 const AEditForm = (props) => {
   let r = Object.prototype.toString
   const [data, setData] = useState(props);
-  const { getAdminkaDate, getEditAdminkaPost } = useActions()
+  const { getAdminkaDate, getEditAdminkaPost, createPostAdminka } = useActions()
   const editData = (e)=> {
     e.preventDefault()
     if(props.id){
@@ -18,7 +18,12 @@ const AEditForm = (props) => {
       getAdminkaDate({url:props.get})
      }else{
        console.log('Новая запись')
-       console.log(JSON.parse(JSON.stringify(data)));
+       createPostAdminka(
+        {
+          url:props.get,
+          date:JSON.parse(JSON.stringify(data))
+        }
+       );
        getAdminkaDate({url:props.get})
      }
   }

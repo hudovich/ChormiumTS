@@ -48,7 +48,8 @@
       "id": "4",
       "name": "Car Accessories",
       "images": "",
-      "description": "Servicing your vehicle is easy when you shop with us We have the high-quality auto parts you need for a successful repair"
+      "description": "Servicing your vehicle is easy when you shop with us We have the high-quality auto parts you need for a successful repair",
+      "get": "category"
     },
     {
       "id": "5",
@@ -389,7 +390,8 @@
       "author": "Автор",
       "images": "https://s0.rbk.ru/v6_top_pics/media/img/7/25/346857125405257.jpg",
       "sub": "Короткое описание",
-      "description": "Описания1"
+      "description": "Описания1",
+      "get": "blog"
     },
     {
       "id": "2",
@@ -399,6 +401,14 @@
       "sub": "Короткое описание",
       "description": "Описания1",
       "get": "blog"
+    },
+    {
+      "get": "blog",
+      "name": "ghng",
+      "description": "ghndf",
+      "sub": "dfhng",
+      "images": "ddfn",
+      "id": "R2GKZ9j"
     }
   ],
   "about": [
