@@ -23,6 +23,7 @@ export const getAdminkaDate = createAsyncThunk(
 export const getEditAdminkaPost = createAsyncThunk(
   'getAdminkaPost',
   async(actions, thunkApi)=>{
+    debugger
     try{
       const response = await fetch (`${API_URL}${actions.url}/${actions.id}`,{
         method: "PATCH",

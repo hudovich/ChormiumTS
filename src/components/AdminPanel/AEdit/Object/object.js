@@ -13,3 +13,22 @@ export const product = {
   promotion: '',
   category:'',
 }
+
+export const about = {
+  name:'',
+  description:'',
+  images:'',
+}
+
+export const slider = {
+  name:'',
+  description:'',
+  category: [],
+  images:'',
+}
+
+export const category = {
+  name:'',
+  description:'',
+  images:'',
+}

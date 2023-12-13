@@ -15,6 +15,7 @@ const AProducts = () => {
       <>
       <div className={s.top}>
         <div className={s.name}>Products</div>
+        <Link to='add'>Add</Link>
       </div>
       <table className={s.table}>
         <thead>

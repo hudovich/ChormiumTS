@@ -102,6 +102,7 @@
   ],
   "settings": [
     {
+      "id": "1",
       "name": "Chromium",
       "phone": "0 (800) 423-754",
       "addres": "Chromium Co , 25 Silicon Road, London D04 89GR",
@@ -366,7 +367,8 @@
       "name": "wheels & tires",
       "images": "https://kartinkin.net/uploads/posts/2021-07/1627093597_5-kartinkin-com-p-fon-protektor-shin-krasivo-5.jpg",
       "description": "Low Prices. Price match",
-      "category": "1"
+      "category": "1",
+      "get": "slider"
     },
     {
       "id": "2",
@@ -390,7 +392,7 @@
       "author": "Автор",
       "images": "https://s0.rbk.ru/v6_top_pics/media/img/7/25/346857125405257.jpg",
       "sub": "Короткое описание",
-      "description": "Описания1",
+      "description": "Описания 2",
       "get": "blog"
     },
     {
@@ -401,6 +403,14 @@
       "sub": "Короткое описание",
       "description": "Описания1",
       "get": "blog"
+    },
+    {
+      "get": "blog",
+      "name": "Увезли машину на эвакуаторе: куда звонить?",
+      "description": "Эвакуация – это перевозка автомобиля на специальную охраняемую стоянку. Чаще всего это происходит из-за того, что машина занимает место, не предназначенное для парковки, или нарушает другие правила дорожного движения. Более подробно об этом расскажем далее.  Нарушения фиксируются сотрудниками ГИБДД или МАДИ (Московская административная дорожная инспекция), если нарушение произошло в Москве. Дальнейшая организация и проведение эвакуации поручается специальным предприятиям.",
+      "sub": "Водитель, впервые столкнувшийся с эвакуацией своего автомобиля, теряется, так как не знает, что делать, куда звонить, где и как забирать машину. Ответам на эти вопросы посвящен материал «Автокода».",
+      "images": "https://assets.avtocod.ru/storage/images/articles/Qsxq87akIDWMwBAWZV9UI5rtGfZkySkm7Xhu56WM.jpg",
+      "id": "Al5YFSu"
     }
   ],
   "about": [
@@ -453,7 +463,7 @@
   "users": [
     {
       "email": "vitaliycall@gmail.com",
-      "password": "$2a$10$F4wruXaGJcAdrIiieljkr.TpUdB5LveR2Xk/LjH3X032aTgfbyIc.",
+      "password": "$2a$10$.no.xDEVnNIgLXAIavTDVuR5HoL.jtisNLxKqeAr9viG0HacoI4Ou",
       "name": "Vitaliy",
       "lastName": "Hudovych",
       "grups": 2,
@@ -484,8 +494,8 @@
             "rating": 0,
             "reviews": []
           },
-          "quantity": 2,
-          "subtotal": 200
+          "quantity": 1,
+          "subtotal": 100
         },
         {
           "id": 2,
@@ -585,7 +595,7 @@
         }
       ],
       "idUser": 1,
-      "status": false,
+      "status": true,
       "id": 1
     },
     {

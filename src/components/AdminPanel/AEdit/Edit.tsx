@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom"
 import { useEffect } from "react"
 import { useActions } from "../../../hook/useActions"
 import { useDate } from "../../../hook/useDate"
-import { blog, product } from "./Object/object.js"
+import { blog, product, about, slider, category } from "./Object/object.js"
 import AEditForm from "./form/AEditForm"
 
 const Edit = ({get}) =>{
@@ -25,6 +25,15 @@ const Edit = ({get}) =>{
           break;
         case'product':
           post = product
+          break;
+        case'about':
+          post = about
+          break;
+        case'slider':
+          post = slider
+          break;
+        case'category':
+          post = category
           break;
         default:
           break;

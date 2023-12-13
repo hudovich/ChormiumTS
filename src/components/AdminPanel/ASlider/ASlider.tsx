@@ -18,7 +18,7 @@ const ASlider = () => {
       <>
       <div className={s.top}>
         <div className={s.name}>Category</div>
-        <button>Add</button>
+        <Link to='add'>Add</Link>
       </div>
       <table className={s.table}>
         <thead>

@@ -2,3 +2,12 @@
   max-width: 120px;
   max-height: 120px;
 }
+.top{
+  display: flex;
+  justify-content: space-between;
+}
+.table{
+  display: table;
+  border-collapse: collapse;
+  width: 100%;
+}
